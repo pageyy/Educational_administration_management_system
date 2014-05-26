@@ -18,7 +18,7 @@ namespace 教务系统
         }
 
         /// <summary>
-        /// 查询MDI子窗体是否存在
+        /// 查询MDI子窗体是否存在：：：：：：：：：：：：：：测试
         /// </summary>
         /// <param name="childFrmName"></param>
         /// <returns></returns>

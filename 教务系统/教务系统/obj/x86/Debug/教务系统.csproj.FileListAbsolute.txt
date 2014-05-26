@@ -1,0 +1,11 @@
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\bin\Debug\教务系统.exe
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\bin\Debug\教务系统.pdb
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Debug\教务系统.Properties.Resources.resources
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Debug\教务系统.exe
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Debug\教务系统.pdb
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Debug\教务系统.ClassInfo.resources
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Debug\教务系统.MainForm.resources
+D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\bin\Debug\教务系统.exe.config

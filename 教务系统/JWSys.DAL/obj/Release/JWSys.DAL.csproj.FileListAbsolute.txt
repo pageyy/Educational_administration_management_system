@@ -1,0 +1,7 @@
+D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.DAL\bin\Release\JWSys.DAL.dll
+D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.DAL\bin\Release\JWSys.DAL.pdb
+D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.DAL\bin\Release\JWSys.Model.dll
+D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.DAL\bin\Release\JWSys.Model.pdb
+D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.DAL\obj\Release\JWSys.DAL.csprojResolveAssemblyReference.cache
+D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.DAL\obj\Release\JWSys.DAL.dll
+D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.DAL\obj\Release\JWSys.DAL.pdb

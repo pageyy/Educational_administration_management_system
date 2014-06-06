@@ -22,6 +22,3 @@ D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Release\教务
 D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Release\教务系统.Student.StuMainForm.resources
 D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Release\教务系统.Teacher.TeaMainForm.resources
 D:\CODE\C#\WinForm\教务系统\教务系统\教务系统\obj\x86\Release\教务系统.Administrator.ProfessionInfo.resources
-D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\bin\Release\教务系统.exe.config
-D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.exe
-D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.pdb

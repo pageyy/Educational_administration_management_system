@@ -30,11 +30,7 @@ namespace 教务系统
             set; 
         }
 
-        /// <summary>
-        /// 搜索学生信息
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region 搜索学生信息
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DataTable dt;
@@ -49,11 +45,9 @@ namespace 教务系统
             dgvStudentsInfo.DataSource = dt;
         }
 
-        /// <summary>
-        /// 获取datagridview中点击数据 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #endregion
+
+        #region 获取datagridview中点击数据
         private void dgvStudentsInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int count = -1;
@@ -98,12 +92,9 @@ namespace 教务系统
                 }
             }
         }
+        #endregion
 
-        /// <summary>
-        /// ToolBar按钮点击事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region ToolBar按钮点击事件
         private void tbStudentsInfo_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
         {
             switch (e.Button.Name)
@@ -407,7 +398,7 @@ namespace 教务系统
             ReadOnly();
             return;
         }
-
+        #endregion 
     }
 }
 

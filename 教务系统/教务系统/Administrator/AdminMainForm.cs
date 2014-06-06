@@ -18,7 +18,7 @@ namespace 教务系统
         }
 
         /// <summary>
-        /// 查询MDI子窗体是否存在：：：：：：：：：：：：：：测试
+        /// 查询MDI子窗体是否存在
         /// </summary>
         /// <param name="childFrmName"></param>
         /// <returns></returns>
@@ -64,6 +64,22 @@ namespace 教务系统
         private void MenuItem6_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        //教师信息维护
+        private void MenuItem2_Click(object sender, EventArgs e)
+        {
+            //待实现。。。。。。。。。。。。。。。。。。
+        }
+        //学生信息维护
+        private void MenuItem3_Click(object sender, EventArgs e)
+        {
+            if (this.checkChildFrmExist("StudentsInfo") == true)
+            {
+                return;
+            }
+            StudentsInfo stu = new StudentsInfo();
+            stu.MdiParent = this;
+            stu.Show();
         }
 
         /*

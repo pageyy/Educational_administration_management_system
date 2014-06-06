@@ -37,11 +37,11 @@
             this.MenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem51 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItem52 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar1 = new System.Windows.Forms.StatusBar();
             this.statusBarPanel1 = new System.Windows.Forms.StatusBarPanel();
             this.statusBarPanel2 = new System.Windows.Forms.StatusBarPanel();
-            this.MenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItem52 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel2)).BeginInit();
@@ -74,14 +74,14 @@
             // MenuItem12
             // 
             this.MenuItem12.Name = "MenuItem12";
-            this.MenuItem12.Size = new System.Drawing.Size(152, 22);
+            this.MenuItem12.Size = new System.Drawing.Size(148, 22);
             this.MenuItem12.Text = "专业信息维护";
             this.MenuItem12.Click += new System.EventHandler(this.MenuItem12_Click);
             // 
             // MenuItem13
             // 
             this.MenuItem13.Name = "MenuItem13";
-            this.MenuItem13.Size = new System.Drawing.Size(152, 22);
+            this.MenuItem13.Size = new System.Drawing.Size(148, 22);
             this.MenuItem13.Text = "班级信息维护";
             this.MenuItem13.Click += new System.EventHandler(this.MenuItem13_Click);
             // 
@@ -90,12 +90,14 @@
             this.MenuItem2.Name = "MenuItem2";
             this.MenuItem2.Size = new System.Drawing.Size(92, 21);
             this.MenuItem2.Text = "教师信息管理";
+            this.MenuItem2.Click += new System.EventHandler(this.MenuItem2_Click);
             // 
             // MenuItem3
             // 
             this.MenuItem3.Name = "MenuItem3";
             this.MenuItem3.Size = new System.Drawing.Size(92, 21);
             this.MenuItem3.Text = "学生信息管理";
+            this.MenuItem3.Click += new System.EventHandler(this.MenuItem3_Click);
             // 
             // MenuItem4
             // 
@@ -117,6 +119,19 @@
             this.MenuItem51.Name = "MenuItem51";
             this.MenuItem51.Size = new System.Drawing.Size(152, 22);
             this.MenuItem51.Text = "教师授权管理";
+            // 
+            // MenuItem52
+            // 
+            this.MenuItem52.Name = "MenuItem52";
+            this.MenuItem52.Size = new System.Drawing.Size(152, 22);
+            this.MenuItem52.Text = "学生授权管理";
+            // 
+            // MenuItem6
+            // 
+            this.MenuItem6.Name = "MenuItem6";
+            this.MenuItem6.Size = new System.Drawing.Size(68, 21);
+            this.MenuItem6.Text = "退出系统";
+            this.MenuItem6.Click += new System.EventHandler(this.MenuItem6_Click);
             // 
             // statusBar1
             // 
@@ -140,19 +155,6 @@
             // 
             this.statusBarPanel2.Name = "statusBarPanel2";
             this.statusBarPanel2.Width = 200;
-            // 
-            // MenuItem6
-            // 
-            this.MenuItem6.Name = "MenuItem6";
-            this.MenuItem6.Size = new System.Drawing.Size(68, 21);
-            this.MenuItem6.Text = "退出系统";
-            this.MenuItem6.Click += new System.EventHandler(this.MenuItem6_Click);
-            // 
-            // MenuItem52
-            // 
-            this.MenuItem52.Name = "MenuItem52";
-            this.MenuItem52.Size = new System.Drawing.Size(152, 22);
-            this.MenuItem52.Text = "学生授权管理";
             // 
             // MainForm
             // 

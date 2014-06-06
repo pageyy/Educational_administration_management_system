@@ -104,6 +104,7 @@
             this.MenuItem4.Name = "MenuItem4";
             this.MenuItem4.Size = new System.Drawing.Size(92, 21);
             this.MenuItem4.Text = "课程信息管理";
+            this.MenuItem4.Click += new System.EventHandler(this.MenuItem4_Click);
             // 
             // MenuItem5
             // 
@@ -117,13 +118,13 @@
             // MenuItem51
             // 
             this.MenuItem51.Name = "MenuItem51";
-            this.MenuItem51.Size = new System.Drawing.Size(152, 22);
+            this.MenuItem51.Size = new System.Drawing.Size(148, 22);
             this.MenuItem51.Text = "教师授权管理";
             // 
             // MenuItem52
             // 
             this.MenuItem52.Name = "MenuItem52";
-            this.MenuItem52.Size = new System.Drawing.Size(152, 22);
+            this.MenuItem52.Size = new System.Drawing.Size(148, 22);
             this.MenuItem52.Text = "学生授权管理";
             // 
             // MenuItem6

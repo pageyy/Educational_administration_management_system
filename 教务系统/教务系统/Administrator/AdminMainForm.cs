@@ -17,11 +17,7 @@ namespace 教务系统
             InitializeComponent();
         }
 
-        /// <summary>
-        /// 查询MDI子窗体是否存在
-        /// </summary>
-        /// <param name="childFrmName"></param>
-        /// <returns></returns>
+        #region 查询MDI子窗体是否存在
         private bool checkChildFrmExist(string childFrmName)
         {
             foreach (Form childFrm in this.MdiChildren)
@@ -35,8 +31,9 @@ namespace 教务系统
             }
             return false;
         }
-        
-        //专业信息维护
+        #endregion
+
+        #region 专业信息维护
         private void MenuItem12_Click(object sender, EventArgs e)
         {
             //通过窗体名称查询该窗体是否已经存在，如存在则显示，否则就新创建一个
@@ -48,8 +45,9 @@ namespace 教务系统
             pro.MdiParent = this;
             pro.Show();
         }
+        #endregion
 
-        //班级信息维护
+        #region  班级信息维护
         private void MenuItem13_Click(object sender, EventArgs e)
         {
             if (this.checkChildFrmExist("ClassInfo") == true)
@@ -60,17 +58,23 @@ namespace 教务系统
             cla.MdiParent = this;
             cla.Show();
         }
+        #endregion
 
+        #region 关闭
         private void MenuItem6_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        //教师信息维护
+        #endregion
+
+        #region 教师信息维护 待实现。。。。。。。。。。。。。。。。。。
         private void MenuItem2_Click(object sender, EventArgs e)
         {
             //待实现。。。。。。。。。。。。。。。。。。
         }
-        //学生信息维护
+        #endregion
+
+        #region 学生信息维护
         private void MenuItem3_Click(object sender, EventArgs e)
         {
             if (this.checkChildFrmExist("StudentsInfo") == true)
@@ -81,67 +85,27 @@ namespace 教务系统
             stu.MdiParent = this;
             stu.Show();
         }
+        #endregion
 
-        /*
-        /// <summary>
-        /// 退出程序
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MenuItem11_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        /// <summary>
-        /// 显示班级信息设置窗体
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MenuItem2_Click(object sender, EventArgs e)
-        {
-            //通过窗体名称查询该窗体是否已经存在，如存在则显示，否则就新创建一个
-            if (this.checkChildFrmExist("ClassInfo") == true)
-            {
-                return;
-            }
-            ClassInfo newFrm = new ClassInfo();
-            newFrm.MdiParent = this;
-            newFrm.Show();
-        }
-
-        /// <summary>
-        /// 显示学生信息设置窗体
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MenuItem3_Click(object sender, EventArgs e)
-        {
-            if (this.checkChildFrmExist("StudentsInfo") == true)
-            {
-                return;
-            }
-            StudentsInfo newFrm = new StudentsInfo();
-            newFrm.MdiParent = this;
-            newFrm.Show();
-        }
-
-        /// <summary>
-        /// 显示课程信息设置窗体
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region 课程信息维护
         private void MenuItem4_Click(object sender, EventArgs e)
         {
             if (this.checkChildFrmExist("CourseInfo") == true)
             {
                 return;
             }
-            CourseInfo newFrm = new CourseInfo();
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            CourseInfo cou = new CourseInfo();
+            cou.MdiParent = this;
+            cou.Show();
         }
+        #endregion
 
+        
+
+        
+
+        
+        /*
         /// <summary>
         /// 显示学生信息设置窗体
         /// </summary>

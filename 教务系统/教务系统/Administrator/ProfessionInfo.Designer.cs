@@ -52,16 +52,16 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblNo = new System.Windows.Forms.Label();
             this.dgvProfessionInfo = new System.Windows.Forms.DataGridView();
-            this.eisbookDataSet1 = new 教务系统.eisbookDataSet1();
-            this.专业信息表BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.专业信息表TableAdapter = new 教务系统.eisbookDataSet1TableAdapters.专业信息表TableAdapter();
             this.专业编号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.专业名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.专业信息表BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eisbookDataSet1 = new 教务系统.eisbookDataSet1();
+            this.专业信息表TableAdapter = new 教务系统.eisbookDataSet1TableAdapters.专业信息表TableAdapter();
             this.gpbSearch.SuspendLayout();
             this.gpbProfessionShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessionInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eisbookDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.专业信息表BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eisbookDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbProfessionInfo
@@ -195,7 +195,7 @@
             this.cmbSearch.FormattingEnabled = true;
             this.cmbSearch.Location = new System.Drawing.Point(194, 18);
             this.cmbSearch.Name = "cmbSearch";
-            this.cmbSearch.Size = new System.Drawing.Size(121, 20);
+            this.cmbSearch.Size = new System.Drawing.Size(206, 20);
             this.cmbSearch.TabIndex = 2;
             // 
             // lblSearchPName
@@ -285,20 +285,6 @@
             this.dgvProfessionInfo.Size = new System.Drawing.Size(731, 282);
             this.dgvProfessionInfo.TabIndex = 3;
             // 
-            // eisbookDataSet1
-            // 
-            this.eisbookDataSet1.DataSetName = "eisbookDataSet1";
-            this.eisbookDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // 专业信息表BindingSource
-            // 
-            this.专业信息表BindingSource.DataMember = "专业信息表";
-            this.专业信息表BindingSource.DataSource = this.eisbookDataSet1;
-            // 
-            // 专业信息表TableAdapter
-            // 
-            this.专业信息表TableAdapter.ClearBeforeFill = true;
-            // 
             // 专业编号DataGridViewTextBoxColumn
             // 
             this.专业编号DataGridViewTextBoxColumn.DataPropertyName = "专业编号";
@@ -310,6 +296,20 @@
             this.专业名称DataGridViewTextBoxColumn.DataPropertyName = "专业名称";
             this.专业名称DataGridViewTextBoxColumn.HeaderText = "专业名称";
             this.专业名称DataGridViewTextBoxColumn.Name = "专业名称DataGridViewTextBoxColumn";
+            // 
+            // 专业信息表BindingSource
+            // 
+            this.专业信息表BindingSource.DataMember = "专业信息表";
+            this.专业信息表BindingSource.DataSource = this.eisbookDataSet1;
+            // 
+            // eisbookDataSet1
+            // 
+            this.eisbookDataSet1.DataSetName = "eisbookDataSet1";
+            this.eisbookDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // 专业信息表TableAdapter
+            // 
+            this.专业信息表TableAdapter.ClearBeforeFill = true;
             // 
             // ProfessionInfo
             // 
@@ -329,8 +329,8 @@
             this.gpbProfessionShow.ResumeLayout(false);
             this.gpbProfessionShow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessionInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eisbookDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.专业信息表BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eisbookDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

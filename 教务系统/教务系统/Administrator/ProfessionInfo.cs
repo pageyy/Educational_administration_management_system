@@ -22,10 +22,16 @@ namespace 教务系统.Administrator
             // TODO: 这行代码将数据加载到表“eisbookDataSet1.专业信息表”中。您可以根据需要移动或删除它。
             this.专业信息表TableAdapter.Fill(this.eisbookDataSet1.专业信息表);
 
-            SQLHelper.CmbExecuteReader("Select 专业名称 from [eisbook].[dbo].[专业信息表]", cmbSearch);
-
-            //dgvProfessionInfo.DataSource = SQLHelper.ExecuteDataTable("select * from [eisbook].[dbo].[专业信息表]");
+            updateCmb();
         }
+
+        #region 更新Cmb模块
+        private void updateCmb()
+        {
+            cmbSearch.Items.Clear();
+            SQLHelper.CmbExecuteReaderForProfession("Select 专业名称 from [eisbook].[dbo].[专业信息表]", cmbSearch);
+        }
+        #endregion
 
         #region 菜单栏功能
         private void tbProfessionInfo_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
@@ -180,6 +186,7 @@ namespace 教务系统.Administrator
                 dgvProfessionInfo.DataSource = SQLHelper.ExecuteDataTable("select * from [eisbook].[dbo].[专业信息表]");
                 TxtReadOnly();
                 MessageBox.Show("提交成功！");
+                updateCmb();//跟新Cmb数据绑定，以方便查找！
                 return;
             }
         }
@@ -215,6 +222,7 @@ namespace 教务系统.Administrator
                     SQLHelper.ExecuteNonQuery("delete  from [eisbook].[dbo].[专业信息表] where 专业编号=@专业编号", new SqlParameter("专业编号", 专业编号));
                     dgvProfessionInfo.DataSource = SQLHelper.ExecuteDataTable("select * from [eisbook].[dbo].[专业信息表]");
                     MessageBox.Show("信息已成功删除！");
+                    updateCmb();
                     return;
                 }
                 else
@@ -234,13 +242,21 @@ namespace 教务系统.Administrator
         }
         #endregion
 
-        //搜索功能
+        #region 搜索功能
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            DataTable dt = new DataTable();
+            string select = cmbSearch.Text;
+            if (select == "显示全部" || select == "")
+            {
+                dt = SQLHelper.ExecuteDataTable("select * from [eisbook].[dbo].[专业信息表]");
+            }
+            else
+            {
+                dt=SQLHelper.ExecuteDataTable("select * from [eisbook].[dbo].[专业信息表] where 专业名称=@专业名称",new SqlParameter("专业名称",select));
+            }
+            dgvProfessionInfo.DataSource = dt;
         }
-
-
-
+        #endregion
     }
 }

@@ -150,6 +150,35 @@ namespace 教务系统
             }
         }
 
+        //专业信息管理定制cmb绑定
+        public static void CmbExecuteReaderForProfession(string sql, ComboBox cmb, params SqlParameter[] parameters)
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["教务系统.Properties.Settings.eisbookConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = sql;
+                    foreach (SqlParameter parameter in parameters)
+                    {
+                        cmd.Parameters.Add(parameter);
+                    }
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Item item = new Item();
+                        item.Name = reader[0].ToString();
+                        cmb.Items.Add(item.Name);
+                    }
+                    Item tmp = new Item();
+                    tmp.Name = "显示全部";
+                    cmb.Items.Add(tmp.Name);
+                    return;
+                }
+            }
+        }
+
         /// <summary>
         /// sql语句执行函数:返回SqlDataReader型  可能这种方法一般用不到，因为返回的datareader型的不能再操作了
         /// </summary>

@@ -74,14 +74,14 @@
             // MenuItem12
             // 
             this.MenuItem12.Name = "MenuItem12";
-            this.MenuItem12.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem12.Size = new System.Drawing.Size(152, 22);
             this.MenuItem12.Text = "专业信息维护";
             this.MenuItem12.Click += new System.EventHandler(this.MenuItem12_Click);
             // 
             // MenuItem13
             // 
             this.MenuItem13.Name = "MenuItem13";
-            this.MenuItem13.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem13.Size = new System.Drawing.Size(152, 22);
             this.MenuItem13.Text = "班级信息维护";
             this.MenuItem13.Click += new System.EventHandler(this.MenuItem13_Click);
             // 
@@ -118,14 +118,15 @@
             // MenuItem51
             // 
             this.MenuItem51.Name = "MenuItem51";
-            this.MenuItem51.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem51.Size = new System.Drawing.Size(152, 22);
             this.MenuItem51.Text = "教师授权管理";
             // 
             // MenuItem52
             // 
             this.MenuItem52.Name = "MenuItem52";
-            this.MenuItem52.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem52.Size = new System.Drawing.Size(152, 22);
             this.MenuItem52.Text = "学生授权管理";
+            this.MenuItem52.Click += new System.EventHandler(this.MenuItem52_Click);
             // 
             // MenuItem6
             // 

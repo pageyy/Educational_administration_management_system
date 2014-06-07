@@ -24,10 +24,10 @@ namespace 教务系统
 
         }
 
-        public MainForm MidParent 
-        { 
-            get; 
-            set; 
+        public MainForm MidParent
+        {
+            get;
+            set;
         }
 
         #region 搜索学生信息
@@ -209,7 +209,7 @@ namespace 教务系统
             //班级名称
             cmb2.Enabled = true;
             cmb2.Text = "";
-            SQLHelper.CmbExecuteReader("select distinct 班级编号,班级名称 from 班级信息",cmb2);
+            SQLHelper.CmbExecuteReader("select distinct 班级编号,班级名称 from 班级信息", cmb2);
             //身份证号
             txt7.ReadOnly = false;
             txt7.Text = "";
@@ -219,7 +219,7 @@ namespace 教务系统
             SQLHelper.CmbExecuteReader("select 政治面貌编号,政治面貌 from 政治面貌代码表", cmb3);
             //民族
             cmb4.Enabled = true;
-            cmb4.Text = ""; 
+            cmb4.Text = "";
             SQLHelper.CmbExecuteReader("select 民族编号,民族 from 民族代码表", cmb4);
             //籍贯
             cmb5.Enabled = true;
@@ -349,6 +349,7 @@ namespace 教务系统
                 }
                 dgvStudentsInfo.DataSource = SQLHelper.ExecuteDataTable("select * from 学生信息");
                 ReadOnly();
+                updateLoginStu();//更新loginStu表
                 MessageBox.Show("提交成功！");
                 return;
             }
@@ -378,13 +379,13 @@ namespace 教务系统
         private void 删除_1()
         {
             string 学号 = this.dgvStudentsInfo.CurrentRow.Cells[0].Value.ToString();
-                
+
             if (MessageBox.Show("删除后将无法恢复，确认删除吗？", "确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 SQLHelper.ExecuteNonQuery("delete  from 学生信息 where 学号=@学号", new SqlParameter("学号", 学号));
                 dgvStudentsInfo.DataSource = SQLHelper.ExecuteDataTable("select * from 学生信息");
                 MessageBox.Show("信息已成功删除！");
-               return;
+                return;
             }
             else
             {
@@ -398,7 +399,18 @@ namespace 教务系统
             ReadOnly();
             return;
         }
-        #endregion 
+        #endregion
+
+        #region 在学生登录表中插入新生信息，初试用户名为姓名，密码为学号
+        private void updateLoginStu()
+        {
+            string no = txt4.Text.Trim();
+            string name = txt5.Text.Trim();
+
+            SQLHelper.ExecuteNonQuery("insert into Student_Login values(@Id,@UserName,@Password,0)", new SqlParameter("Id", Guid.NewGuid()), new SqlParameter("UserName", name), new SqlParameter("Password", no));
+        }
+        #endregion
+
     }
 }
 

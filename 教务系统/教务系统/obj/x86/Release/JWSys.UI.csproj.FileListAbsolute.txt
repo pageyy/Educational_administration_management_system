@@ -47,3 +47,4 @@ D:\CODE\github\Educational_administration_management_system\教务系统\教务�
 D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Teacher.TeaMainForm.resources
 D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\JWSys.UI.csproj.GenerateResource.Cache
 D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Administrator.TeacherInfo.resources
+D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Administrator.GrantToStudent.resources

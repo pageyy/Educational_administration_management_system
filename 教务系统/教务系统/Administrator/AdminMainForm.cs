@@ -106,6 +106,17 @@ namespace 教务系统
         }
         #endregion
 
+        private void MenuItem52_Click(object sender, EventArgs e)
+        {
+            if (this.checkChildFrmExist("GrantToStudent") == true)
+            {
+                return;
+            }
+            GrantToStudent gTs = new GrantToStudent();
+            gTs.MdiParent = this;
+            gTs.Show();
+        }
+
         
 
         

@@ -43,7 +43,7 @@ namespace JWSys.DAL
         #region student
         public Loger GetByStudentName(string userName)
         {
-            DataTable table = SQLHelper.ExecuteDataTable("select * from [eisbook].[dbo].[Student_Login] where UserName=@UserName", new SqlParameter("@UserName", userName));
+            DataTable table = SQLHelper.ExecuteDataTable("select * from [eisbook].[dbo].[Student_Login] where UserName=@UserName and IsGranted=1", new SqlParameter("@UserName", userName));
             if (table.Rows.Count <= 0)
             {
                 return null;

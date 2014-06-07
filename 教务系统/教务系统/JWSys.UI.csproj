@@ -70,6 +70,12 @@
     <Compile Include="Administrator\CourseInfo.Designer.cs">
       <DependentUpon>CourseInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrator\GrantToStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator\GrantToStudent.Designer.cs">
+      <DependentUpon>GrantToStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrator\ProfessionInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrator\CourseInfo.resx">
       <DependentUpon>CourseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrator\GrantToStudent.resx">
+      <DependentUpon>GrantToStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrator\ProfessionInfo.resx">
       <DependentUpon>ProfessionInfo.cs</DependentUpon>
@@ -295,7 +304,12 @@
       <Name>JWSys.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Grant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Revoke.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

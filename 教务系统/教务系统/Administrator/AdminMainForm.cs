@@ -12,10 +12,17 @@ namespace 教务系统
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+
+        public MainForm(string username)
         {
             InitializeComponent();
+
+            sbEduAdmin.Panels[1].Text = username+"，欢迎您登录教务管理系统！当前为管理员用户状态。";
+            sbEduAdmin.Panels[2].Text = "当前系统时间为：" + DateTime.Now.ToString();
         }
+
+
+
 
         #region 查询MDI子窗体是否存在
         private bool checkChildFrmExist(string childFrmName)
@@ -106,6 +113,7 @@ namespace 教务系统
         }
         #endregion
 
+        #region 学生用户授权管理
         private void MenuItem52_Click(object sender, EventArgs e)
         {
             if (this.checkChildFrmExist("GrantToStudent") == true)
@@ -116,10 +124,24 @@ namespace 教务系统
             gTs.MdiParent = this;
             gTs.Show();
         }
+        #endregion 
 
-        
+        #region 教师用户授权管理
+        private void MenuItem51_Click(object sender, EventArgs e)
+        {
+            if (this.checkChildFrmExist("GrantToTeacher") == true)
+            {
+                return;
+            }
+            GrantToTeacher gTt = new GrantToTeacher();
+            gTt.MdiParent = this;
+            gTt.Show();
+        }
+        #endregion
 
-        
+
+
+
         /*
         /// <summary>
         /// 显示学生信息设置窗体

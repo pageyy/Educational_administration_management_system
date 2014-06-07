@@ -28,19 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.sbEduStu = new System.Windows.Forms.StatusBar();
+            this.statusBarPanel4 = new System.Windows.Forms.StatusBarPanel();
+            this.statusBarPanel1 = new System.Windows.Forms.StatusBarPanel();
+            this.statusBarPanel2 = new System.Windows.Forms.StatusBarPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(955, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // sbEduStu
+            // 
+            this.sbEduStu.Location = new System.Drawing.Point(0, 606);
+            this.sbEduStu.Name = "sbEduStu";
+            this.sbEduStu.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
+            this.statusBarPanel4,
+            this.statusBarPanel1,
+            this.statusBarPanel2});
+            this.sbEduStu.ShowPanels = true;
+            this.sbEduStu.Size = new System.Drawing.Size(955, 22);
+            this.sbEduStu.TabIndex = 6;
+            // 
+            // statusBarPanel4
+            // 
+            this.statusBarPanel4.Name = "statusBarPanel4";
+            // 
+            // statusBarPanel1
+            // 
+            this.statusBarPanel1.MinWidth = 200;
+            this.statusBarPanel1.Name = "statusBarPanel1";
+            this.statusBarPanel1.Width = 400;
+            // 
+            // statusBarPanel2
+            // 
+            this.statusBarPanel2.MinWidth = 100;
+            this.statusBarPanel2.Name = "statusBarPanel2";
+            this.statusBarPanel2.Width = 300;
             // 
             // StuMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 628);
+            this.Controls.Add(this.sbEduStu);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "StuMainForm";
-            this.Text = "【教务管理系统】";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "【教务管理系统-学生用户】";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.StatusBar sbEduStu;
+        private System.Windows.Forms.StatusBarPanel statusBarPanel4;
+        private System.Windows.Forms.StatusBarPanel statusBarPanel1;
+        private System.Windows.Forms.StatusBarPanel statusBarPanel2;
     }
 }

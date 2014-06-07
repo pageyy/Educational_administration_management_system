@@ -51,16 +51,6 @@
             this.toolBarButton9 = new System.Windows.Forms.ToolBarButton();
             this.toolBarButton10 = new System.Windows.Forms.ToolBarButton();
             this.dgvCourseInfo = new System.Windows.Forms.DataGridView();
-            this.课程编号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.课程名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.课程简称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.拼音码DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.本学期课程DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.教师DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.开课系别DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.学分DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.课程信息bindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eisbookDataSet = new 教务系统.eisbookDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmb1 = new System.Windows.Forms.ComboBox();
             this.txt4 = new System.Windows.Forms.TextBox();
@@ -79,12 +69,22 @@
             this.lbl10 = new System.Windows.Forms.Label();
             this.lbl11 = new System.Windows.Forms.Label();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
+            this.课程编号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.课程名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.课程简称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.拼音码DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.本学期课程DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.教师DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.开课系别DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.学分DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.课程信息bindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eisbookDataSet = new 教务系统.eisbookDataSet();
             this.课程信息TableAdapter = new 教务系统.eisbookDataSetTableAdapters.课程信息TableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseInfo)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.课程信息bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eisbookDataSet)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -100,7 +100,7 @@
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Location = new System.Drawing.Point(0, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(726, 50);
+            this.groupBox1.Size = new System.Drawing.Size(927, 50);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -199,7 +199,7 @@
             this.tbCourseInfo.Location = new System.Drawing.Point(0, 0);
             this.tbCourseInfo.Name = "tbCourseInfo";
             this.tbCourseInfo.ShowToolTips = true;
-            this.tbCourseInfo.Size = new System.Drawing.Size(728, 41);
+            this.tbCourseInfo.Size = new System.Drawing.Size(929, 41);
             this.tbCourseInfo.TabIndex = 1;
             this.tbCourseInfo.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.tbCourseInfo_ButtonClick);
             // 
@@ -279,6 +279,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCourseInfo.AutoGenerateColumns = false;
+            this.dgvCourseInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCourseInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCourseInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.课程编号DataGridViewTextBoxColumn,
@@ -293,68 +294,9 @@
             this.dgvCourseInfo.Location = new System.Drawing.Point(0, 103);
             this.dgvCourseInfo.Name = "dgvCourseInfo";
             this.dgvCourseInfo.RowTemplate.Height = 23;
-            this.dgvCourseInfo.Size = new System.Drawing.Size(726, 282);
+            this.dgvCourseInfo.Size = new System.Drawing.Size(927, 282);
             this.dgvCourseInfo.TabIndex = 2;
             this.dgvCourseInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourseInfo_CellClick);
-            // 
-            // 课程编号DataGridViewTextBoxColumn
-            // 
-            this.课程编号DataGridViewTextBoxColumn.DataPropertyName = "课程编号";
-            this.课程编号DataGridViewTextBoxColumn.HeaderText = "课程编号";
-            this.课程编号DataGridViewTextBoxColumn.Name = "课程编号DataGridViewTextBoxColumn";
-            // 
-            // 课程名称DataGridViewTextBoxColumn
-            // 
-            this.课程名称DataGridViewTextBoxColumn.DataPropertyName = "课程名称";
-            this.课程名称DataGridViewTextBoxColumn.HeaderText = "课程名称";
-            this.课程名称DataGridViewTextBoxColumn.Name = "课程名称DataGridViewTextBoxColumn";
-            // 
-            // 课程简称DataGridViewTextBoxColumn
-            // 
-            this.课程简称DataGridViewTextBoxColumn.DataPropertyName = "课程简称";
-            this.课程简称DataGridViewTextBoxColumn.HeaderText = "课程简称";
-            this.课程简称DataGridViewTextBoxColumn.Name = "课程简称DataGridViewTextBoxColumn";
-            // 
-            // 拼音码DataGridViewTextBoxColumn
-            // 
-            this.拼音码DataGridViewTextBoxColumn.DataPropertyName = "拼音码";
-            this.拼音码DataGridViewTextBoxColumn.HeaderText = "拼音码";
-            this.拼音码DataGridViewTextBoxColumn.Name = "拼音码DataGridViewTextBoxColumn";
-            // 
-            // 本学期课程DataGridViewTextBoxColumn
-            // 
-            this.本学期课程DataGridViewTextBoxColumn.DataPropertyName = "本学期课程";
-            this.本学期课程DataGridViewTextBoxColumn.HeaderText = "本学期课程";
-            this.本学期课程DataGridViewTextBoxColumn.Name = "本学期课程DataGridViewTextBoxColumn";
-            // 
-            // 教师DataGridViewTextBoxColumn
-            // 
-            this.教师DataGridViewTextBoxColumn.DataPropertyName = "教师";
-            this.教师DataGridViewTextBoxColumn.HeaderText = "教师";
-            this.教师DataGridViewTextBoxColumn.Name = "教师DataGridViewTextBoxColumn";
-            // 
-            // 开课系别DataGridViewTextBoxColumn
-            // 
-            this.开课系别DataGridViewTextBoxColumn.DataPropertyName = "开课系别";
-            this.开课系别DataGridViewTextBoxColumn.HeaderText = "开课系别";
-            this.开课系别DataGridViewTextBoxColumn.Name = "开课系别DataGridViewTextBoxColumn";
-            // 
-            // 学分DataGridViewTextBoxColumn
-            // 
-            this.学分DataGridViewTextBoxColumn.DataPropertyName = "学分";
-            this.学分DataGridViewTextBoxColumn.HeaderText = "学分";
-            this.学分DataGridViewTextBoxColumn.Name = "学分DataGridViewTextBoxColumn";
-            // 
-            // 课程信息bindingSource
-            // 
-            this.课程信息bindingSource.AllowNew = true;
-            this.课程信息bindingSource.DataMember = "课程信息";
-            this.课程信息bindingSource.DataSource = this.eisbookDataSet;
-            // 
-            // eisbookDataSet
-            // 
-            this.eisbookDataSet.DataSetName = "eisbookDataSet";
-            this.eisbookDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox2
             // 
@@ -378,7 +320,7 @@
             this.groupBox2.Controls.Add(this.lbl11);
             this.groupBox2.Location = new System.Drawing.Point(0, 387);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(726, 145);
+            this.groupBox2.Size = new System.Drawing.Size(927, 145);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
@@ -519,6 +461,65 @@
                 "ue";
             this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
+            // 课程编号DataGridViewTextBoxColumn
+            // 
+            this.课程编号DataGridViewTextBoxColumn.DataPropertyName = "课程编号";
+            this.课程编号DataGridViewTextBoxColumn.HeaderText = "课程编号";
+            this.课程编号DataGridViewTextBoxColumn.Name = "课程编号DataGridViewTextBoxColumn";
+            // 
+            // 课程名称DataGridViewTextBoxColumn
+            // 
+            this.课程名称DataGridViewTextBoxColumn.DataPropertyName = "课程名称";
+            this.课程名称DataGridViewTextBoxColumn.HeaderText = "课程名称";
+            this.课程名称DataGridViewTextBoxColumn.Name = "课程名称DataGridViewTextBoxColumn";
+            // 
+            // 课程简称DataGridViewTextBoxColumn
+            // 
+            this.课程简称DataGridViewTextBoxColumn.DataPropertyName = "课程简称";
+            this.课程简称DataGridViewTextBoxColumn.HeaderText = "课程简称";
+            this.课程简称DataGridViewTextBoxColumn.Name = "课程简称DataGridViewTextBoxColumn";
+            // 
+            // 拼音码DataGridViewTextBoxColumn
+            // 
+            this.拼音码DataGridViewTextBoxColumn.DataPropertyName = "拼音码";
+            this.拼音码DataGridViewTextBoxColumn.HeaderText = "拼音码";
+            this.拼音码DataGridViewTextBoxColumn.Name = "拼音码DataGridViewTextBoxColumn";
+            // 
+            // 本学期课程DataGridViewTextBoxColumn
+            // 
+            this.本学期课程DataGridViewTextBoxColumn.DataPropertyName = "本学期课程";
+            this.本学期课程DataGridViewTextBoxColumn.HeaderText = "本学期课程";
+            this.本学期课程DataGridViewTextBoxColumn.Name = "本学期课程DataGridViewTextBoxColumn";
+            // 
+            // 教师DataGridViewTextBoxColumn
+            // 
+            this.教师DataGridViewTextBoxColumn.DataPropertyName = "教师";
+            this.教师DataGridViewTextBoxColumn.HeaderText = "教师";
+            this.教师DataGridViewTextBoxColumn.Name = "教师DataGridViewTextBoxColumn";
+            // 
+            // 开课系别DataGridViewTextBoxColumn
+            // 
+            this.开课系别DataGridViewTextBoxColumn.DataPropertyName = "开课系别";
+            this.开课系别DataGridViewTextBoxColumn.HeaderText = "开课系别";
+            this.开课系别DataGridViewTextBoxColumn.Name = "开课系别DataGridViewTextBoxColumn";
+            // 
+            // 学分DataGridViewTextBoxColumn
+            // 
+            this.学分DataGridViewTextBoxColumn.DataPropertyName = "学分";
+            this.学分DataGridViewTextBoxColumn.HeaderText = "学分";
+            this.学分DataGridViewTextBoxColumn.Name = "学分DataGridViewTextBoxColumn";
+            // 
+            // 课程信息bindingSource
+            // 
+            this.课程信息bindingSource.AllowNew = true;
+            this.课程信息bindingSource.DataMember = "课程信息";
+            this.课程信息bindingSource.DataSource = this.eisbookDataSet;
+            // 
+            // eisbookDataSet
+            // 
+            this.eisbookDataSet.DataSetName = "eisbookDataSet";
+            this.eisbookDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // 课程信息TableAdapter
             // 
             this.课程信息TableAdapter.ClearBeforeFill = true;
@@ -527,7 +528,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 532);
+            this.ClientSize = new System.Drawing.Size(929, 532);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvCourseInfo);
             this.Controls.Add(this.tbCourseInfo);
@@ -539,10 +540,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.课程信息bindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eisbookDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.课程信息bindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eisbookDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -341,6 +341,7 @@ namespace 教务系统
                 {
                     SQLHelper.ExecuteNonQuery("Insert into 学生信息 values(@学号,@姓名,@班级编号,@性别,@年级,@政治面貌编号,@民族编号,@籍贯编号,@身份证号,@学籍编号)", new SqlParameter("学号", 学号), new SqlParameter("姓名", 姓名), new SqlParameter("班级编号", 班级编号), new SqlParameter("性别", 性别), new SqlParameter("年级", 年级), new SqlParameter("政治面貌编号", 政治面貌编号), new SqlParameter("民族编号", 民族编号), new SqlParameter("籍贯编号", 籍贯编号), new SqlParameter("身份证号", 身份证号), new SqlParameter("学籍编号", 学籍编号));
                     Judge = null;
+                    updateLoginStu();//更新loginStu表，注意不能这句不能放在最后，防止每次修改时都新增用户信息到登录表
                 }
                 else if (Judge == "修改")
                 {
@@ -349,7 +350,6 @@ namespace 教务系统
                 }
                 dgvStudentsInfo.DataSource = SQLHelper.ExecuteDataTable("select * from 学生信息");
                 ReadOnly();
-                updateLoginStu();//更新loginStu表
                 MessageBox.Show("提交成功！");
                 return;
             }

@@ -121,6 +121,7 @@ namespace 教务系统
         }
         #endregion
 
+        #region 点击登录
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string userName = txtUsername.Text.Trim();
@@ -168,17 +169,17 @@ namespace 教务系统
                             this.Hide();
                             if (guaid == 1)
                             {
-                                MainForm adminmf = new MainForm();
+                                MainForm adminmf = new MainForm(userName);
                                 adminmf.ShowDialog();
                             }
                             else if (guaid == 2)
                             {
-                                StuMainForm stumf = new StuMainForm();
+                                StuMainForm stumf = new StuMainForm(userName);
                                 stumf.ShowDialog();
                             }
                             else if (guaid == 3)
                             {
-                                TeaMainForm teamf = new TeaMainForm();
+                                TeaMainForm teamf = new TeaMainForm(userName);
                                 teamf.ShowDialog();
                             }
                             this.Show();
@@ -197,6 +198,7 @@ namespace 教务系统
             }
            
         }
+        #endregion
 
         private void btnReset_Click(object sender, EventArgs e)
         {

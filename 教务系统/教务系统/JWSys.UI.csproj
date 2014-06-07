@@ -76,6 +76,12 @@
     <Compile Include="Administrator\GrantToStudent.Designer.cs">
       <DependentUpon>GrantToStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrator\GrantToTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator\GrantToTeacher.Designer.cs">
+      <DependentUpon>GrantToTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrator\ProfessionInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrator\GrantToStudent.resx">
       <DependentUpon>GrantToStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrator\GrantToTeacher.resx">
+      <DependentUpon>GrantToTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrator\ProfessionInfo.resx">
       <DependentUpon>ProfessionInfo.cs</DependentUpon>

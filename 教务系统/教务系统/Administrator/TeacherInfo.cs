@@ -199,10 +199,8 @@ namespace 教务系统.Administrator
         /// </summary>
         private void 提交_1()
         {
-            if (txtNo.ReadOnly == true)
+            if (txtName.ReadOnly == true)
                 return;
-            //if (Judge == "新增")
-            //{
             if (txtNo.Text == "")
             {
                 MessageBox.Show("职工号不能为空", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -264,6 +262,7 @@ namespace 教务系统.Administrator
                 {
                     SQLHelper.ExecuteNonQuery("Insert into 教师信息 values(@职工号,@姓名,@性别,@职称编号,@政治面貌编号,@民族编号,@籍贯编号,@身份证号)", new SqlParameter("职工号", 职工号), new SqlParameter("姓名", 姓名), new SqlParameter("性别", 性别), new SqlParameter("职称编号", 职称编号), new SqlParameter("政治面貌编号", 政治面貌编号), new SqlParameter("民族编号", 民族编号), new SqlParameter("籍贯编号", 籍贯编号), new SqlParameter("身份证号", 身份证号));
                     Judge = null;
+                    updateLoginTea();//新增的同时将教师信息作为登录信息
                 }
                 else if (Judge == "修改")
                 {
@@ -382,6 +381,16 @@ namespace 教务系统.Administrator
                 dt = SQLHelper.ExecuteDataTable("select * from 教师信息");
             }
             dgvTeacherInfo.DataSource = dt;
+        }
+        #endregion
+
+        #region 在教师登录表中插入新教师信息，初试用户名为姓名，密码为职工号
+        private void updateLoginTea()
+        {
+            string no = txtNo.Text.Trim();
+            string name = txtName.Text.Trim();
+
+            SQLHelper.ExecuteNonQuery("insert into Teacher_Login values(@Id,@UserName,@Password,0)", new SqlParameter("Id", Guid.NewGuid()), new SqlParameter("UserName", name), new SqlParameter("Password", no));
         }
         #endregion
 

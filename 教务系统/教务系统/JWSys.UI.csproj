@@ -82,6 +82,12 @@
     <Compile Include="Administrator\StudentsInfo.Designer.cs">
       <DependentUpon>StudentsInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrator\TeacherInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator\TeacherInfo.Designer.cs">
+      <DependentUpon>TeacherInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrystalReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,11 @@
     <Compile Include="Student\ViewScore.Designer.cs">
       <DependentUpon>ViewScore.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeachersInfoDateSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeachersInfoDateSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\ScoreInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrator\StudentsInfo.resx">
       <DependentUpon>StudentsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrator\TeacherInfo.resx">
+      <DependentUpon>TeacherInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport.resx">
       <DependentUpon>CrystalReport.cs</DependentUpon>
@@ -245,6 +259,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TeachersInfoDateSet.xsc">
+      <DependentUpon>TeachersInfoDateSet.xsd</DependentUpon>
+    </None>
+    <None Include="TeachersInfoDateSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TeachersInfoDateSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TeachersInfoDateSet.xss">
+      <DependentUpon>TeachersInfoDateSet.xsd</DependentUpon>
+    </None>
     <None Include="教务系统DataSet.xsc">
       <DependentUpon>教务系统DataSet.xsd</DependentUpon>
     </None>

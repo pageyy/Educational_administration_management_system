@@ -60,17 +60,16 @@ namespace 教务系统
         }
         #endregion
 
-        #region 关闭
-        private void MenuItem6_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        #endregion
-
-        #region 教师信息维护 待实现。。。。。。。。。。。。。。。。。。
+        #region 教师信息维护
         private void MenuItem2_Click(object sender, EventArgs e)
         {
-            //待实现。。。。。。。。。。。。。。。。。。
+            if (this.checkChildFrmExist("TeacherInfo") == true)
+            {
+                return;
+            }
+            TeacherInfo tea = new TeacherInfo();
+            tea.MdiParent = this;
+            tea.Show();
         }
         #endregion
 
@@ -100,7 +99,12 @@ namespace 教务系统
         }
         #endregion
 
-        
+        #region 关闭
+        private void MenuItem6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
 
         
 

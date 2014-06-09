@@ -17,9 +17,13 @@ namespace 教务系统
         //课程编号
         private string CourseID;
 
-        public ScoreInput()
+        private string teaId;
+
+        public ScoreInput(string userid)
         {
             InitializeComponent();
+
+            teaId = userid;
         }
 
         /// <summary>

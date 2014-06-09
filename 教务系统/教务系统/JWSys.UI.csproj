@@ -178,6 +178,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TeachersInfoDateSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\ModifyTeaPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\ModifyTeaPassword.Designer.cs">
+      <DependentUpon>ModifyTeaPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\ScoreInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\ViewScore.resx">
       <DependentUpon>ViewScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\ModifyTeaPassword.resx">
+      <DependentUpon>ModifyTeaPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\ScoreInput.resx">
       <DependentUpon>ScoreInput.cs</DependentUpon>

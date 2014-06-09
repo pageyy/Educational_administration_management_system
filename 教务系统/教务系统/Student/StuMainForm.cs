@@ -55,7 +55,7 @@ namespace 教务系统.Student
         #region 密码修改
         private void 密码修改ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //
         }
         #endregion
 

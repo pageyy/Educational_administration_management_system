@@ -50,3 +50,4 @@ D:\CODE\github\Educational_administration_management_system\教务系统\教务�
 D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Administrator.GrantToStudent.resources
 D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Administrator.GrantToTeacher.resources
 D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Student.ShowStuInfo.resources
+D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Student.ModifyStuPassword.resources

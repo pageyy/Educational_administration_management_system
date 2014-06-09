@@ -149,6 +149,12 @@
     <Compile Include="Student\CurriculumSchedule.Designer.cs">
       <DependentUpon>CurriculumSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\ModifyStuPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\ModifyStuPassword.Designer.cs">
+      <DependentUpon>ModifyStuPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\ShowStuInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\CurriculumSchedule.resx">
       <DependentUpon>CurriculumSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\ModifyStuPassword.resx">
+      <DependentUpon>ModifyStuPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\ShowStuInfo.resx">
       <DependentUpon>ShowStuInfo.cs</DependentUpon>

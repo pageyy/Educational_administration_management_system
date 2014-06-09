@@ -55,7 +55,14 @@ namespace 教务系统.Student
         #region 密码修改
         private void 密码修改ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //
+            //通过窗体名称查询该窗体是否已经存在，如存在则显示，否则就新创建一个
+            if (this.checkChildFrmExist("ModifyStuPassword") == true)
+            {
+                return;
+            }
+            ModifyStuPassword msp = new ModifyStuPassword(userName);
+            msp.MdiParent = this;
+            msp.Show();
         }
         #endregion
 

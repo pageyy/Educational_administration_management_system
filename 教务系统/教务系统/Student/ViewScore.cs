@@ -19,44 +19,36 @@ namespace 教务系统
         //学生的成绩单
         private DataTable ScoreList;
 
-        public ViewScore()
+        public ViewScore(string userid)
         {
             InitializeComponent();
+
+            studentID = userid;
+            txt1.Text = userid;
+            getScore();
         }
 
-        /// <summary>
-        /// 输入学号后回车，显示学生信息和其选课成绩信息
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txt1_KeyPress(object sender, KeyPressEventArgs e)
+        private void getScore()
         {
-            if (e.KeyChar == 13)
+            string connStr = ConfigurationManager.ConnectionStrings["教务系统.Properties.Settings.eisbookConnectionString"].ConnectionString;
+            SqlConnection conn = new SqlConnection(connStr);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select a.姓名,b.班级名称 from 学生信息 a,班级信息 b where (a.班级编号=b.班级编号) and (学号='" + studentID + "')";
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            if (!dr.HasRows)//此处提示语得修改
             {
-                txt2.Clear();
-                txt3.Clear();
-
-                string connStr = ConfigurationManager.ConnectionStrings["教务系统.Properties.Settings.eisbookConnectionString"].ConnectionString;
-                SqlConnection conn = new SqlConnection(connStr);
-                conn.Open();
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "select a.姓名,b.班级名称 from 学生信息 a,班级信息 b where (a.班级编号=b.班级编号) and (学号='" + txt1.Text.Trim() + "')";
-                SqlDataReader dr = cmd.ExecuteReader();
-                dr.Read();
-                if (!dr.HasRows)
-                {
-                    MessageBox.Show("无此学生，请重新输入学号", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    dr.Close();
-                    return;
-                }
-                txt2.Text = dr.GetValue(0).ToString().Trim();
-                txt3.Text = dr.GetValue(1).ToString().Trim();
+                MessageBox.Show("无此学生，请重新输入学号", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 dr.Close();
-                ScoreList = SQLHelper.ExecuteDataTable("select b.课程名称,b.开课系别,a.成绩,b.教师 from 成绩表 a,课程信息 b where 学号=@学号 and a.课程编号=b.课程编号 and a.是否已确定成绩='Y'", new SqlParameter("学号", txt1.Text.Trim()));
-                dgvGrade.DataSource = ScoreList;
-                //da1.SelectCommand.Parameters[0].Value = txt1.Text.Trim();
-                //da1.Fill(DataSetGradeList);
-            }
+                return;
+             }
+             txt2.Text = dr.GetValue(0).ToString().Trim();
+             dr.Close();
+             ScoreList = SQLHelper.ExecuteDataTable("select b.课程名称,b.开课系别,a.成绩,b.教师 from 成绩表 a,课程信息 b where 学号=@学号 and a.课程编号=b.课程编号 and a.是否已确定成绩='Y'", new SqlParameter("学号", studentID));
+             dgvGrade.DataSource = ScoreList;
+             //da1.SelectCommand.Parameters[0].Value = txt1.Text.Trim();
+             //da1.Fill(DataSetGradeList);
         }
 
         /// <summary>

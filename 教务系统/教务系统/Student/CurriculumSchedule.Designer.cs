@@ -52,7 +52,7 @@
             this.gbStudentInfo.Controls.Add(this.lbl1);
             this.gbStudentInfo.Location = new System.Drawing.Point(12, 3);
             this.gbStudentInfo.Name = "gbStudentInfo";
-            this.gbStudentInfo.Size = new System.Drawing.Size(704, 67);
+            this.gbStudentInfo.Size = new System.Drawing.Size(792, 67);
             this.gbStudentInfo.TabIndex = 0;
             this.gbStudentInfo.TabStop = false;
             this.gbStudentInfo.Text = "学生信息";
@@ -118,14 +118,14 @@
             this.dgCourseElected.HeaderForeColor = System.Drawing.SystemColors.ControlText;
             this.dgCourseElected.Location = new System.Drawing.Point(12, 76);
             this.dgCourseElected.Name = "dgCourseElected";
-            this.dgCourseElected.Size = new System.Drawing.Size(704, 444);
+            this.dgCourseElected.Size = new System.Drawing.Size(792, 464);
             this.dgCourseElected.TabIndex = 1;
             // 
             // CurriculumSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 532);
+            this.ClientSize = new System.Drawing.Size(816, 552);
             this.Controls.Add(this.dgCourseElected);
             this.Controls.Add(this.gbStudentInfo);
             this.Name = "CurriculumSchedule";

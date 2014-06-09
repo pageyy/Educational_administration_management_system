@@ -20,41 +20,42 @@ namespace 教务系统
         private string studentID;//保存选课的学生信息
         private string stduentName;//选课的学生的姓名
 
-        public CourseElect()
+        public CourseElect(string userid)
         {
             InitializeComponent();
+            studentID = userid;
+            txt1.Text = userid;
         }
 
-        /// <summary>
-        /// 初始化操作 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region 初始化操作 加载课程信息
         private void CourseElect_Load(object sender, EventArgs e)
         {
             courseTable = SQLHelper.ExecuteDataTable("select * from CourseElectIs_Y ");
             dgvCourse.DataSource = courseTable;
-        }
 
-        /// <summary>
-        /// 输入学号后，按确定
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txt1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13 && txt1.Text.Trim() != "")//输入学号后回车，查询学生信息和选课信息
-            {
-                this.electTable.Clear();//先清空选课表
-                txt2.Clear();
-                txt3.Clear();
-                //关闭选课，删课等许可
-                btnElect.Enabled = false;
-                btnDelete.Enabled = false;
-                btnView.Enabled = false;
-                this.ShowInfo();
-            }
+            ShowInfo();
         }
+        #endregion
+
+        ///// <summary>
+        ///// 输入学号后，按确定
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void txt1_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == 13 && txt1.Text.Trim() != "")//输入学号后回车，查询学生信息和选课信息
+        //    {
+        //        this.electTable.Clear();//先清空选课表
+        //        txt2.Clear();
+        //        txt3.Clear();
+        //        //关闭选课，删课等许可
+        //        btnElect.Enabled = false;
+        //        btnDelete.Enabled = false;
+        //        btnView.Enabled = false;
+        //        this.ShowInfo();
+        //    }
+        //}
 
         /// <summary>
         /// 显示学生已选修的课程信息
@@ -66,7 +67,7 @@ namespace 教务系统
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select a.姓名,b.班级名称,a.学籍编号 from 学生信息 a,班级信息 b where (a.班级编号=b.班级编号) and (学号='" + txt1.Text.Trim() + "')";
+            cmd.CommandText = "select a.姓名,b.班级名称,a.学籍编号 from 学生信息 a,班级信息 b where (a.班级编号=b.班级编号) and (学号='" + studentID + "')";
             SqlDataReader dr = cmd.ExecuteReader(); 
             //SqlDataReader dr = SQLHelper.ExecuteReader("select a.姓名,b.班级名称,a.学籍编号 from 学生信息 a,班级信息 b where (a.班级编号=b.班级编号) and 学号=@学号", new SqlParameter("学号", txt1.Text.Trim()));
             //读入数据
@@ -90,9 +91,9 @@ namespace 教务系统
             dr.Close();
 
             //读入选课信息
-            electTable = SQLHelper.ExecuteDataTable("select * from CourseElected where 学号=@学号", new SqlParameter("学号", txt1.Text.Trim()));
+            electTable = SQLHelper.ExecuteDataTable("select * from CourseElected where 学号=@学号", new SqlParameter("学号", studentID));
             dgvElectedCourse.DataSource = electTable;
-            this.studentID = txt1.Text.Trim();//保存获准选课的学生学号
+            //this.studentID = txt1.Text.Trim();//保存获准选课的学生学号
             this.stduentName = txt2.Text.Trim();//保存学生姓名
             //允许选课，删课，查课表等操作
             btnElect.Enabled = true;
@@ -207,7 +208,7 @@ namespace 教务系统
         private void btnView_Click(object sender, EventArgs e)
         {
             CurriculumSchedule newFrm = new CurriculumSchedule(this.studentID);
-            newFrm.Text += "学生：" + this.stduentName;
+            //newFrm.Text += "学生：" + this.stduentName;
             newFrm.Show();
         }
 

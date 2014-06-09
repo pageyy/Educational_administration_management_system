@@ -401,13 +401,13 @@ namespace 教务系统
         }
         #endregion
 
-        #region 在学生登录表中插入新生信息，初试用户名为姓名，密码为学号
+        #region 在学生登录表中插入新生信息，初始用户名为学号，密码为学号
         private void updateLoginStu()
         {
             string no = txt4.Text.Trim();
-            string name = txt5.Text.Trim();
+            //string name = txt5.Text.Trim();//这样为后面获取用户数据方便，直接根据用户名即可，因为用户名在密码修改时不能修改
 
-            SQLHelper.ExecuteNonQuery("insert into Student_Login values(@Id,@UserName,@Password,0)", new SqlParameter("Id", Guid.NewGuid()), new SqlParameter("UserName", name), new SqlParameter("Password", no));
+            SQLHelper.ExecuteNonQuery("insert into Student_Login values(@Id,@UserName,@Password,0)", new SqlParameter("Id", Guid.NewGuid()), new SqlParameter("UserName", no), new SqlParameter("Password", no));
         }
         #endregion
 

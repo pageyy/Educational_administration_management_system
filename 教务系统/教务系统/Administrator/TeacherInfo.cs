@@ -384,13 +384,13 @@ namespace 教务系统.Administrator
         }
         #endregion
 
-        #region 在教师登录表中插入新教师信息，初试用户名为姓名，密码为职工号
+        #region 在教师登录表中插入新教师信息，初试用户名为职工号，密码为职工号
         private void updateLoginTea()
         {
             string no = txtNo.Text.Trim();
-            string name = txtName.Text.Trim();
+            //string name = txtName.Text.Trim();
 
-            SQLHelper.ExecuteNonQuery("insert into Teacher_Login values(@Id,@UserName,@Password,0)", new SqlParameter("Id", Guid.NewGuid()), new SqlParameter("UserName", name), new SqlParameter("Password", no));
+            SQLHelper.ExecuteNonQuery("insert into Teacher_Login values(@Id,@UserName,@Password,0)", new SqlParameter("Id", Guid.NewGuid()), new SqlParameter("UserName", no), new SqlParameter("Password", no));
         }
         #endregion
 

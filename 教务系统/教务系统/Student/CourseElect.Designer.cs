@@ -96,11 +96,11 @@
             // 
             // txt1
             // 
+            this.txt1.Enabled = false;
             this.txt1.Location = new System.Drawing.Point(111, 21);
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(100, 21);
             this.txt1.TabIndex = 3;
-            this.txt1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt1_KeyPress);
             // 
             // lbl3
             // 
@@ -134,6 +134,7 @@
             this.dgvElectedCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvElectedCourse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvElectedCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvElectedCourse.Location = new System.Drawing.Point(3, 64);
             this.dgvElectedCourse.Name = "dgvElectedCourse";
@@ -159,6 +160,7 @@
             this.dgvCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCourse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCourse.Location = new System.Drawing.Point(232, 20);
             this.dgvCourse.Name = "dgvCourse";
@@ -325,7 +327,6 @@
             this.Name = "CourseElect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "【学生选课】";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CourseElect_Load);
             this.gbCourseElect.ResumeLayout(false);
             this.gbCourseElect.PerformLayout();

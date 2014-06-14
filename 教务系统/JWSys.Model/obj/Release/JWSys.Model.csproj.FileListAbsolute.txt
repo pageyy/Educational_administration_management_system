@@ -2,3 +2,7 @@ D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.Model\bin\Release\JWSys.Model
 D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.Model\bin\Release\JWSys.Model.pdb
 D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.Model\obj\Release\JWSys.Model.dll
 D:\CODE\C#\WinForm\教务系统\教务系统\JWSys.Model\obj\Release\JWSys.Model.pdb
+D:\CODE\github\Educational_administration_management_system\教务系统\JWSys.Model\bin\Release\JWSys.Model.dll
+D:\CODE\github\Educational_administration_management_system\教务系统\JWSys.Model\bin\Release\JWSys.Model.pdb
+D:\CODE\github\Educational_administration_management_system\教务系统\JWSys.Model\obj\Release\JWSys.Model.dll
+D:\CODE\github\Educational_administration_management_system\教务系统\JWSys.Model\obj\Release\JWSys.Model.pdb

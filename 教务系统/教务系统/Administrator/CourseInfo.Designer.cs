@@ -52,12 +52,13 @@
             this.toolBarButton10 = new System.Windows.Forms.ToolBarButton();
             this.dgvCourseInfo = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt12 = new System.Windows.Forms.TextBox();
+            this.lbl12 = new System.Windows.Forms.Label();
             this.cmb1 = new System.Windows.Forms.ComboBox();
             this.txt4 = new System.Windows.Forms.TextBox();
             this.txt5 = new System.Windows.Forms.TextBox();
             this.txt6 = new System.Windows.Forms.TextBox();
             this.txt9 = new System.Windows.Forms.TextBox();
-            this.txt8 = new System.Windows.Forms.TextBox();
             this.txt7 = new System.Windows.Forms.TextBox();
             this.lbl4 = new System.Windows.Forms.Label();
             this.lbl5 = new System.Windows.Forms.Label();
@@ -68,7 +69,7 @@
             this.txt10 = new System.Windows.Forms.TextBox();
             this.lbl10 = new System.Windows.Forms.Label();
             this.lbl11 = new System.Windows.Forms.Label();
-            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
+            this.cmbTeaName = new System.Windows.Forms.ComboBox();
             this.课程编号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.课程名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.课程简称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,14 +78,15 @@
             this.教师DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.开课系别DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.学分DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.课程信息bindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eisbookDataSet = new 教务系统.eisbookDataSet();
-            this.课程信息TableAdapter = new 教务系统.eisbookDataSetTableAdapters.课程信息TableAdapter();
+            this.课程容量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.课程信息BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courseInfoDateSet = new 教务系统.CourseInfoDateSet();
+            this.课程信息TableAdapter = new 教务系统.CourseInfoDateSetTableAdapters.课程信息TableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseInfo)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.课程信息bindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eisbookDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.课程信息BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseInfoDateSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -289,8 +291,9 @@
             this.本学期课程DataGridViewTextBoxColumn,
             this.教师DataGridViewTextBoxColumn,
             this.开课系别DataGridViewTextBoxColumn,
-            this.学分DataGridViewTextBoxColumn});
-            this.dgvCourseInfo.DataSource = this.课程信息bindingSource;
+            this.学分DataGridViewTextBoxColumn,
+            this.课程容量DataGridViewTextBoxColumn});
+            this.dgvCourseInfo.DataSource = this.课程信息BindingSource;
             this.dgvCourseInfo.Location = new System.Drawing.Point(0, 103);
             this.dgvCourseInfo.Name = "dgvCourseInfo";
             this.dgvCourseInfo.RowTemplate.Height = 23;
@@ -302,12 +305,14 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.cmbTeaName);
+            this.groupBox2.Controls.Add(this.txt12);
+            this.groupBox2.Controls.Add(this.lbl12);
             this.groupBox2.Controls.Add(this.cmb1);
             this.groupBox2.Controls.Add(this.txt4);
             this.groupBox2.Controls.Add(this.txt5);
             this.groupBox2.Controls.Add(this.txt6);
             this.groupBox2.Controls.Add(this.txt9);
-            this.groupBox2.Controls.Add(this.txt8);
             this.groupBox2.Controls.Add(this.txt7);
             this.groupBox2.Controls.Add(this.lbl4);
             this.groupBox2.Controls.Add(this.lbl5);
@@ -324,15 +329,31 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
+            // txt12
+            // 
+            this.txt12.Location = new System.Drawing.Point(675, 93);
+            this.txt12.Name = "txt12";
+            this.txt12.ReadOnly = true;
+            this.txt12.Size = new System.Drawing.Size(64, 21);
+            this.txt12.TabIndex = 32;
+            // 
+            // lbl12
+            // 
+            this.lbl12.Location = new System.Drawing.Point(675, 74);
+            this.lbl12.Name = "lbl12";
+            this.lbl12.Size = new System.Drawing.Size(64, 19);
+            this.lbl12.TabIndex = 31;
+            this.lbl12.Text = "课程容量";
+            // 
             // cmb1
             // 
             this.cmb1.Enabled = false;
             this.cmb1.Items.AddRange(new object[] {
             "Y",
             "N"});
-            this.cmb1.Location = new System.Drawing.Point(531, 95);
+            this.cmb1.Location = new System.Drawing.Point(482, 96);
             this.cmb1.Name = "cmb1";
-            this.cmb1.Size = new System.Drawing.Size(121, 20);
+            this.cmb1.Size = new System.Drawing.Size(169, 20);
             this.cmb1.TabIndex = 30;
             // 
             // txt4
@@ -361,23 +382,15 @@
             // 
             // txt9
             // 
-            this.txt9.Location = new System.Drawing.Point(291, 93);
+            this.txt9.Location = new System.Drawing.Point(240, 93);
             this.txt9.Name = "txt9";
             this.txt9.ReadOnly = true;
             this.txt9.Size = new System.Drawing.Size(136, 21);
             this.txt9.TabIndex = 29;
             // 
-            // txt8
-            // 
-            this.txt8.Location = new System.Drawing.Point(163, 93);
-            this.txt8.Name = "txt8";
-            this.txt8.ReadOnly = true;
-            this.txt8.Size = new System.Drawing.Size(104, 21);
-            this.txt8.TabIndex = 27;
-            // 
             // txt7
             // 
-            this.txt7.Location = new System.Drawing.Point(75, 93);
+            this.txt7.Location = new System.Drawing.Point(675, 43);
             this.txt7.Name = "txt7";
             this.txt7.ReadOnly = true;
             this.txt7.Size = new System.Drawing.Size(64, 21);
@@ -409,7 +422,7 @@
             // 
             // lbl7
             // 
-            this.lbl7.Location = new System.Drawing.Point(291, 79);
+            this.lbl7.Location = new System.Drawing.Point(240, 79);
             this.lbl7.Name = "lbl7";
             this.lbl7.Size = new System.Drawing.Size(100, 16);
             this.lbl7.TabIndex = 20;
@@ -417,7 +430,7 @@
             // 
             // lbl8
             // 
-            this.lbl8.Location = new System.Drawing.Point(163, 79);
+            this.lbl8.Location = new System.Drawing.Point(75, 78);
             this.lbl8.Name = "lbl8";
             this.lbl8.Size = new System.Drawing.Size(100, 16);
             this.lbl8.TabIndex = 19;
@@ -425,7 +438,7 @@
             // 
             // lbl9
             // 
-            this.lbl9.Location = new System.Drawing.Point(75, 79);
+            this.lbl9.Location = new System.Drawing.Point(675, 29);
             this.lbl9.Name = "lbl9";
             this.lbl9.Size = new System.Drawing.Size(82, 14);
             this.lbl9.TabIndex = 18;
@@ -433,7 +446,7 @@
             // 
             // txt10
             // 
-            this.txt10.Location = new System.Drawing.Point(451, 95);
+            this.txt10.Location = new System.Drawing.Point(400, 95);
             this.txt10.Name = "txt10";
             this.txt10.ReadOnly = true;
             this.txt10.Size = new System.Drawing.Size(56, 21);
@@ -441,7 +454,7 @@
             // 
             // lbl10
             // 
-            this.lbl10.Location = new System.Drawing.Point(451, 79);
+            this.lbl10.Location = new System.Drawing.Point(400, 79);
             this.lbl10.Name = "lbl10";
             this.lbl10.Size = new System.Drawing.Size(32, 16);
             this.lbl10.TabIndex = 21;
@@ -449,17 +462,20 @@
             // 
             // lbl11
             // 
-            this.lbl11.Location = new System.Drawing.Point(531, 79);
+            this.lbl11.Location = new System.Drawing.Point(482, 80);
             this.lbl11.Name = "lbl11";
             this.lbl11.Size = new System.Drawing.Size(96, 16);
             this.lbl11.TabIndex = 22;
             this.lbl11.Text = "是否本学期课程";
             // 
-            // sqlConnection1
+            // cmbTeaName
             // 
-            this.sqlConnection1.ConnectionString = "Data Source=HEIMINGX-PC\\SQLEXPRESS;Initial Catalog=eisbook;Integrated Security=Tr" +
-                "ue";
-            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
+            this.cmbTeaName.Enabled = false;
+            this.cmbTeaName.FormattingEnabled = true;
+            this.cmbTeaName.Location = new System.Drawing.Point(75, 94);
+            this.cmbTeaName.Name = "cmbTeaName";
+            this.cmbTeaName.Size = new System.Drawing.Size(136, 20);
+            this.cmbTeaName.TabIndex = 33;
             // 
             // 课程编号DataGridViewTextBoxColumn
             // 
@@ -509,16 +525,21 @@
             this.学分DataGridViewTextBoxColumn.HeaderText = "学分";
             this.学分DataGridViewTextBoxColumn.Name = "学分DataGridViewTextBoxColumn";
             // 
-            // 课程信息bindingSource
+            // 课程容量DataGridViewTextBoxColumn
             // 
-            this.课程信息bindingSource.AllowNew = true;
-            this.课程信息bindingSource.DataMember = "课程信息";
-            this.课程信息bindingSource.DataSource = this.eisbookDataSet;
+            this.课程容量DataGridViewTextBoxColumn.DataPropertyName = "课程容量";
+            this.课程容量DataGridViewTextBoxColumn.HeaderText = "课程容量";
+            this.课程容量DataGridViewTextBoxColumn.Name = "课程容量DataGridViewTextBoxColumn";
             // 
-            // eisbookDataSet
+            // 课程信息BindingSource
             // 
-            this.eisbookDataSet.DataSetName = "eisbookDataSet";
-            this.eisbookDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.课程信息BindingSource.DataMember = "课程信息";
+            this.课程信息BindingSource.DataSource = this.courseInfoDateSet;
+            // 
+            // courseInfoDateSet
+            // 
+            this.courseInfoDateSet.DataSetName = "CourseInfoDateSet";
+            this.courseInfoDateSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // 课程信息TableAdapter
             // 
@@ -542,8 +563,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseInfo)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.课程信息bindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eisbookDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.课程信息BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseInfoDateSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,7 +599,6 @@
         private System.Windows.Forms.TextBox txt5;
         private System.Windows.Forms.TextBox txt6;
         private System.Windows.Forms.TextBox txt9;
-        private System.Windows.Forms.TextBox txt8;
         private System.Windows.Forms.TextBox txt7;
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.Label lbl5;
@@ -589,10 +609,9 @@
         private System.Windows.Forms.TextBox txt10;
         private System.Windows.Forms.Label lbl10;
         private System.Windows.Forms.Label lbl11;
-        private System.Windows.Forms.BindingSource 课程信息bindingSource;
-        private eisbookDataSet eisbookDataSet;
-        private System.Data.SqlClient.SqlConnection sqlConnection1;
-        private eisbookDataSetTableAdapters.课程信息TableAdapter 课程信息TableAdapter;
+        private CourseInfoDateSet courseInfoDateSet;
+        private System.Windows.Forms.BindingSource 课程信息BindingSource;
+        private CourseInfoDateSetTableAdapters.课程信息TableAdapter 课程信息TableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn 课程编号DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 课程名称DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 课程简称DataGridViewTextBoxColumn;
@@ -601,5 +620,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 教师DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 开课系别DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 学分DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 课程容量DataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txt12;
+        private System.Windows.Forms.Label lbl12;
+        private System.Windows.Forms.ComboBox cmbTeaName;
     }
 }

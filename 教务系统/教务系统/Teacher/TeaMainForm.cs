@@ -38,8 +38,6 @@ namespace 教务系统.Teacher
         }
         #endregion
 
-
-
         #region 退出
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -64,7 +62,14 @@ namespace 教务系统.Teacher
         #region 个人信息
         private void 个人信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //通过窗体名称查询该窗体是否已经存在，如存在则显示，否则就新创建一个
+            if (this.checkChildFrmExist("TeaInfo") == true)
+            {
+                return;
+            }
+            TeaInfo ti = new TeaInfo(userName);
+            ti.MdiParent = this;
+            ti.Show();
         }
         #endregion
 
@@ -79,6 +84,27 @@ namespace 教务系统.Teacher
             ScoreInput si = new ScoreInput(userName);
             si.MdiParent = this;
             si.Show();
+        }
+        #endregion
+
+        #region 选课查询
+        private void 选课查询ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //通过窗体名称查询该窗体是否已经存在，如存在则显示，否则就新创建一个
+            if (this.checkChildFrmExist("ShowCourseSelectedInfo") == true)
+            {
+                return;
+            }
+            ShowCourseSelectedInfo scsi = new ShowCourseSelectedInfo(userName);
+            scsi.MdiParent = this;
+            scsi.Show();
+        }
+        #endregion
+
+        #region 课表查询
+        private void 课表查询ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
     }

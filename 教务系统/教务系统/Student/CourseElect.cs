@@ -57,9 +57,7 @@ namespace 教务系统
         //    }
         //}
 
-        /// <summary>
-        /// 显示学生已选修的课程信息
-        /// </summary>
+        #region 显示学生已选修的课程信息
         private void ShowInfo()
         {
             //******************************此处待改******************************
@@ -100,12 +98,9 @@ namespace 教务系统
             btnDelete.Enabled = true;
             btnView.Enabled = true;
         }
+        #endregion
 
-        /// <summary>
-        /// 筛选课程：此处运用视图：CourseElectIs_Y
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region 筛选课程：此处运用视图：CourseElectIs_Y
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string filter = "select * from CourseElectIs_Y where 1=1";
@@ -127,12 +122,9 @@ namespace 教务系统
             }
             dgvCourse.DataSource = SQLHelper.ExecuteDataTable(filter);    
         }
+        #endregion
 
-        /// <summary>
-        /// 选课操作
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region 选课操作
         private void btnElect_Click(object sender, EventArgs e)
         {
             //可选课程表为空，不能选课
@@ -141,40 +133,50 @@ namespace 教务系统
                 MessageBox.Show("可选课表为空，无法选课", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
+
             //当前所选的课序号
             string courseID = dgvCourse.CurrentRow.Cells[0].Value.ToString().Trim();
-            //所选课程的上课时间天
-            string courseDay = dgvCourse.CurrentRow.Cells[6].Value.ToString().Trim();
-            //所选课程的上课时间节
-            string courseSec = dgvCourse.CurrentRow.Cells[7].Value.ToString().Trim();
-            foreach (DataRow aRow in this.electTable.Rows)
+            string courseNum=courseID.Substring(4);
+            int num = (int)SQLHelper.ExecuteScalar("select 剩余容量 from [eisbook].[dbo].[课程信息] where 课程编号=@课程编号", new SqlParameter("课程编号", courseNum));
+            if (num <= 0)
             {
-                if (aRow["课序号"].ToString().Trim() == courseID)
-                {
-                    MessageBox.Show("所选课程已经在课程表中", "课程重复", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-                if (aRow["上课时间天"].ToString().Trim() == courseDay && aRow["上课时间节"].ToString().Trim() == courseSec)
-                {
-                    string msg = "所选课程和已选课程:" + aRow["课程名称"].ToString().Trim() + " 上课时间冲突";
-                    MessageBox.Show(msg, "时间冲突", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
+                MessageBox.Show("该课程容量已满！");
             }
-            SQLHelper.ExecuteNonQuery("insert into 选课表([学号],[课序号]) values(@学号,@课序号)", new SqlParameter("学号", this.studentID), new SqlParameter("课序号", courseID));
-            //重新读入学生的选课信息
-            this.electTable.Clear();
-            electTable = SQLHelper.ExecuteDataTable("select * from CourseElected where 学号=@学号", new SqlParameter("学号", txt1.Text.Trim()));
-            dgvElectedCourse.DataSource = electTable;
-            MessageBox.Show("成功选修该课程！");
-            return;
-        }
+            else
+            {
+                //更新课程容量： -1
+                SQLHelper.ExecuteNonQuery("update [eisbook].[dbo].[课程信息] set 剩余容量=@剩余容量 where 课程编号=@课程编号", new SqlParameter("剩余容量", num - 1), new SqlParameter("课程编号", courseNum));
 
-        /// <summary>
-        /// 删除已选修的课程
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+                //所选课程的上课时间天
+                string courseDay = dgvCourse.CurrentRow.Cells[6].Value.ToString().Trim();
+                //所选课程的上课时间节
+                string courseSec = dgvCourse.CurrentRow.Cells[7].Value.ToString().Trim();
+                foreach (DataRow aRow in this.electTable.Rows)
+                {
+                    if (aRow["课序号"].ToString().Trim() == courseID)
+                    {
+                        MessageBox.Show("所选课程已经在课程表中", "课程重复", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                    if (aRow["上课时间天"].ToString().Trim() == courseDay && aRow["上课时间节"].ToString().Trim() == courseSec)
+                    {
+                        string msg = "所选课程和已选课程:" + aRow["课程名称"].ToString().Trim() + " 上课时间冲突";
+                        MessageBox.Show(msg, "时间冲突", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                }
+                SQLHelper.ExecuteNonQuery("insert into 选课表([学号],[课序号]) values(@学号,@课序号)", new SqlParameter("学号", this.studentID), new SqlParameter("课序号", courseID));
+                //重新读入学生的选课信息
+                this.electTable.Clear();
+                electTable = SQLHelper.ExecuteDataTable("select * from CourseElected where 学号=@学号", new SqlParameter("学号", txt1.Text.Trim()));
+                dgvElectedCourse.DataSource = electTable;
+                MessageBox.Show("成功选修该课程！");
+                return;
+            }
+        }
+        #endregion
+
+        #region 删除已选修的课程
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (this.electTable.Rows.Count == 0)
@@ -189,6 +191,10 @@ namespace 教务系统
 			DialogResult result=MessageBox.Show(msg,"删除课程",MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
+                //更新课程容量： +1
+                int num = (int)SQLHelper.ExecuteScalar("select 剩余容量 from [eisbook].[dbo].[课程信息] where 课程编号=@课程编号", new SqlParameter("课程编号", deleteID.Substring(4)));
+                SQLHelper.ExecuteNonQuery("update [eisbook].[dbo].[课程信息] set 剩余容量=@剩余容量 where 课程编号=@课程编号", new SqlParameter("剩余容量", num + 1), new SqlParameter("课程编号", deleteID.Substring(4)));
+
                 SQLHelper.ExecuteNonQuery("delete from 选课表 where 学号=@学号 and 课序号=@课序号", new SqlParameter("学号", txt1.Text.Trim()),new SqlParameter("课序号",deleteID));
                 //重新读入学生的选课信息
                 this.electTable.Clear();
@@ -199,23 +205,20 @@ namespace 教务系统
             }
 
         }
+        #endregion 
 
-        /// <summary>
-        /// 查看课程表
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region 查看课程表
         private void btnView_Click(object sender, EventArgs e)
         {
             CurriculumSchedule newFrm = new CurriculumSchedule(this.studentID);
             //newFrm.Text += "学生：" + this.stduentName;
             newFrm.Show();
         }
+        #endregion
 
-        
 
-        
 
-        
+
+
     }
 }

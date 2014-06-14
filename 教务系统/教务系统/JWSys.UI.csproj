@@ -100,6 +100,11 @@
     <Compile Include="Administrator\TeacherInfo.Designer.cs">
       <DependentUpon>TeacherInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="CourseInfoDateSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourseInfoDateSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CrystalReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +195,24 @@
     <Compile Include="Teacher\ScoreInput.Designer.cs">
       <DependentUpon>ScoreInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\ShowCourseSelectedInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\ShowCourseSelectedInfo.Designer.cs">
+      <DependentUpon>ShowCourseSelectedInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\ShowCourseTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\ShowCourseTable.Designer.cs">
+      <DependentUpon>ShowCourseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\TeaInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\TeaInfo.Designer.cs">
+      <DependentUpon>TeaInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\TeaMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,10 +292,30 @@
     <EmbeddedResource Include="Teacher\ScoreInput.resx">
       <DependentUpon>ScoreInput.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\ShowCourseSelectedInfo.resx">
+      <DependentUpon>ShowCourseSelectedInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\ShowCourseTable.resx">
+      <DependentUpon>ShowCourseTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\TeaInfo.resx">
+      <DependentUpon>TeaInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teacher\TeaMainForm.resx">
       <DependentUpon>TeaMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="CourseInfoDateSet.xsc">
+      <DependentUpon>CourseInfoDateSet.xsd</DependentUpon>
+    </None>
+    <None Include="CourseInfoDateSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CourseInfoDateSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CourseInfoDateSet.xss">
+      <DependentUpon>CourseInfoDateSet.xsd</DependentUpon>
+    </None>
     <None Include="eisbookDataSet.xsc">
       <DependentUpon>eisbookDataSet.xsd</DependentUpon>
     </None>

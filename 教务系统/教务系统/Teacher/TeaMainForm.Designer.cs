@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.sbEduTea = new System.Windows.Forms.StatusBar();
-            this.statusBarPanel4 = new System.Windows.Forms.StatusBarPanel();
-            this.statusBarPanel1 = new System.Windows.Forms.StatusBarPanel();
-            this.statusBarPanel2 = new System.Windows.Forms.StatusBarPanel();
             this.信息维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.个人信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +37,10 @@
             this.选课查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.成绩录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sbEduTea = new System.Windows.Forms.StatusBar();
+            this.statusBarPanel4 = new System.Windows.Forms.StatusBarPanel();
+            this.statusBarPanel1 = new System.Windows.Forms.StatusBarPanel();
+            this.statusBarPanel2 = new System.Windows.Forms.StatusBarPanel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel1)).BeginInit();
@@ -59,34 +59,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(955, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // sbEduTea
-            // 
-            this.sbEduTea.Location = new System.Drawing.Point(0, 606);
-            this.sbEduTea.Name = "sbEduTea";
-            this.sbEduTea.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
-            this.statusBarPanel4,
-            this.statusBarPanel1,
-            this.statusBarPanel2});
-            this.sbEduTea.ShowPanels = true;
-            this.sbEduTea.Size = new System.Drawing.Size(955, 22);
-            this.sbEduTea.TabIndex = 6;
-            // 
-            // statusBarPanel4
-            // 
-            this.statusBarPanel4.Name = "statusBarPanel4";
-            // 
-            // statusBarPanel1
-            // 
-            this.statusBarPanel1.MinWidth = 200;
-            this.statusBarPanel1.Name = "statusBarPanel1";
-            this.statusBarPanel1.Width = 400;
-            // 
-            // statusBarPanel2
-            // 
-            this.statusBarPanel2.MinWidth = 100;
-            this.statusBarPanel2.Name = "statusBarPanel2";
-            this.statusBarPanel2.Width = 300;
             // 
             // 信息维护ToolStripMenuItem
             // 
@@ -125,12 +97,14 @@
             this.课表查询ToolStripMenuItem.Name = "课表查询ToolStripMenuItem";
             this.课表查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.课表查询ToolStripMenuItem.Text = "课表查询";
+            this.课表查询ToolStripMenuItem.Click += new System.EventHandler(this.课表查询ToolStripMenuItem_Click);
             // 
             // 选课查询ToolStripMenuItem
             // 
             this.选课查询ToolStripMenuItem.Name = "选课查询ToolStripMenuItem";
             this.选课查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.选课查询ToolStripMenuItem.Text = "选课查询";
+            this.选课查询ToolStripMenuItem.Click += new System.EventHandler(this.选课查询ToolStripMenuItem_Click);
             // 
             // 成绩录入ToolStripMenuItem
             // 
@@ -145,6 +119,34 @@
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
+            // 
+            // sbEduTea
+            // 
+            this.sbEduTea.Location = new System.Drawing.Point(0, 606);
+            this.sbEduTea.Name = "sbEduTea";
+            this.sbEduTea.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
+            this.statusBarPanel4,
+            this.statusBarPanel1,
+            this.statusBarPanel2});
+            this.sbEduTea.ShowPanels = true;
+            this.sbEduTea.Size = new System.Drawing.Size(955, 22);
+            this.sbEduTea.TabIndex = 6;
+            // 
+            // statusBarPanel4
+            // 
+            this.statusBarPanel4.Name = "statusBarPanel4";
+            // 
+            // statusBarPanel1
+            // 
+            this.statusBarPanel1.MinWidth = 200;
+            this.statusBarPanel1.Name = "statusBarPanel1";
+            this.statusBarPanel1.Width = 400;
+            // 
+            // statusBarPanel2
+            // 
+            this.statusBarPanel2.MinWidth = 100;
+            this.statusBarPanel2.Name = "statusBarPanel2";
+            this.statusBarPanel2.Width = 300;
             // 
             // TeaMainForm
             // 

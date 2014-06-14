@@ -22,7 +22,12 @@ namespace 教务系统
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new 教务系统.Teacher.TeaMainForm("T080002"));//教务系统.Student.StuMainForm("08113398")  Login()
+            Application.Run(new 教务系统.Teacher.TeaMainForm("T080002"));
+            //教务系统.Student.StuMainForm("08113398")
+            //教务系统.Student.StuMainForm("08113401")
+            //Login()  
+            //教务系统.Teacher.TeaMainForm("T080002")  
+            //MainForm("admin")
         }
     }
 }

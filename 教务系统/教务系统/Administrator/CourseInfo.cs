@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
+using JWSys.Model;
 
 namespace 教务系统
 {
@@ -25,16 +26,12 @@ namespace 教务系统
         /// <param name="e"></param>
         private void CourseInfo_Load(object sender, EventArgs e)
         {
-            // TODO: 这行代码将数据加载到表“eisbookDataSet.课程信息”中。您可以根据需要移动或删除它。
-            this.课程信息TableAdapter.Fill(this.eisbookDataSet.课程信息);
+            // TODO: 这行代码将数据加载到表“courseInfoDateSet.课程信息”中。您可以根据需要移动或删除它。
+            this.课程信息TableAdapter.Fill(this.courseInfoDateSet.课程信息);
 
         }
 
-        /// <summary>
-        /// 搜索课程信息
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region 搜索课程信息
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DataTable dt;
@@ -48,12 +45,9 @@ namespace 教务系统
             }
             dgvCourseInfo.DataSource = dt;
         }
+        #endregion
 
-        /// <summary>
-        /// 获取datagridview中点击数据
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region 获取datagridview中点击数据
         private void dgvCourseInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int count = -1;
@@ -68,24 +62,23 @@ namespace 教务系统
                 string 教师 = this.dgvCourseInfo.Rows[count].Cells[5].Value.ToString();
                 string 开课系别 = this.dgvCourseInfo.Rows[count].Cells[6].Value.ToString();
                 string 学分 = this.dgvCourseInfo.Rows[count].Cells[7].Value.ToString();
+                string 课程容量 = this.dgvCourseInfo.Rows[count].Cells[8].Value.ToString();
 
                 txt4.Text = 课程编号;
                 txt5.Text = 课程名称;
                 txt6.Text = 课程简称;
                 txt7.Text = 拼音码;
                 cmb1.Text = 本学期课程;
-                txt8.Text = 教师;
+                cmbTeaName.Text = 教师;
                 txt9.Text = 开课系别;
                 txt10.Text = 学分;
+                txt12.Text = 课程容量;
             }
             return;
         }
+        #endregion
 
-        /// <summary>
-        /// ToolBar按钮点击事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region ToolBar按钮点击事件
         private void tbCourseInfo_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
         {
             switch (e.Button.Name)
@@ -140,7 +133,7 @@ namespace 教务系统
         /// </summary>
         private void 首行_1()
         {
-            课程信息bindingSource.MoveFirst();
+            课程信息BindingSource.MoveFirst();
             dgvCourseInfo.CurrentRow.Selected = true;
             return;
         }
@@ -150,7 +143,7 @@ namespace 教务系统
         /// </summary>
         private void 上一行_1()
         {
-            课程信息bindingSource.MovePrevious();
+            课程信息BindingSource.MovePrevious();
             dgvCourseInfo.CurrentRow.Selected = true;
             return;
         }
@@ -160,7 +153,7 @@ namespace 教务系统
         /// </summary>
         private void 下一行_1()
         {
-            课程信息bindingSource.MoveNext();
+            课程信息BindingSource.MoveNext();
             dgvCourseInfo.CurrentRow.Selected = true;
             return;
         }
@@ -170,7 +163,7 @@ namespace 教务系统
         /// </summary>
         private void 末行_1()
         {
-            课程信息bindingSource.MoveLast();
+            课程信息BindingSource.MoveLast();
             dgvCourseInfo.CurrentRow.Selected = true;
             return;
         }
@@ -201,14 +194,18 @@ namespace 教务系统
             cmb1.Enabled = true;
             cmb1.Text = "";
             //教师
-            txt8.ReadOnly = false;
-            txt8.Text = "";
+            cmbTeaName.Enabled = true;
+            SQLHelper.CmbExecuteReader("select 职工号,姓名 from [eisbook].[dbo].[教师信息]", cmbTeaName);
+            cmbTeaName.Text = "";
             //开课系别
             txt9.ReadOnly = false;
             txt9.Text = "";
             //学分
             txt10.ReadOnly = false;
             txt10.Text = "";
+            //课程容量
+            txt12.ReadOnly = false;
+            txt12.Text = "";
            
             return;
         }
@@ -226,9 +223,11 @@ namespace 教务系统
                 txt6.ReadOnly = false;
                 txt7.ReadOnly = false;
                 cmb1.Enabled = true;
-                txt8.ReadOnly = false;
+                cmbTeaName.Enabled = true;
+                SQLHelper.CmbExecuteReader("select 职工号,姓名 from [eisbook].[dbo].[教师信息]", cmbTeaName);
                 txt9.ReadOnly = false;
                 txt10.ReadOnly = false;
+                txt12.ReadOnly = false;
                 return;
             }
             else
@@ -257,18 +256,29 @@ namespace 教务系统
                 string 课程简称 = txt6.Text.Trim();
                 string 拼音码 = txt7.Text.Trim();
                 string 本学期课程 = cmb1.Text.Trim();
-                string 教师 = txt8.Text.Trim();
+                string 教师 = cmbTeaName.Text.Trim();
                 string 开课系别 = txt9.Text.Trim();
                 string 学分 = txt10.Text.Trim();
+                string 课程容量 = txt12.Text.Trim();
+                //找到选中item的教师职工号
+                int selected = 0;
+                for (int i = 0; i < cmbTeaName.Items.Count; i++)
+                {
+                    if (((CmbAttributes)cmbTeaName.Items[i]).name == 教师)
+                    {
+                        selected = i;
+                    }
+                }
+                string 教职工号 = ((CmbAttributes)cmbTeaName.Items[selected]).id;
                 
                 if (Judge == "新增")
                 {
-                    SQLHelper.ExecuteNonQuery("Insert into 课程信息 values(@课程编号,@课程名称,@课程简称,@拼音码,@本学期课程,@教师,@开课系别,@学分)", new SqlParameter("课程编号", 课程编号), new SqlParameter("课程名称", 课程名称), new SqlParameter("课程简称", 课程简称), new SqlParameter("拼音码", 拼音码), new SqlParameter("本学期课程", 本学期课程), new SqlParameter("教师", 教师), new SqlParameter("开课系别", 开课系别), new SqlParameter("学分", 学分));
+                    SQLHelper.ExecuteNonQuery("Insert into 课程信息 values(@课程编号,@课程名称,@课程简称,@拼音码,@本学期课程,@教师,@开课系别,@学分,@课程容量,@教职工号,@剩余容量)", new SqlParameter("课程编号", 课程编号), new SqlParameter("课程名称", 课程名称), new SqlParameter("课程简称", 课程简称), new SqlParameter("拼音码", 拼音码), new SqlParameter("本学期课程", 本学期课程), new SqlParameter("教师", 教师), new SqlParameter("开课系别", 开课系别), new SqlParameter("学分", 学分), new SqlParameter("课程容量", 课程容量), new SqlParameter("教职工号", 教职工号),new SqlParameter("剩余容量",课程容量));
                     Judge = null;
                 }
                 else if (Judge == "修改")
                 {
-                    SQLHelper.ExecuteNonQuery("update 课程信息 set 课程编号=@课程编号,课程名称=@课程名称,课程简称=@课程简称,拼音码=@拼音码,本学期课程=@本学期课程,教师=@教师,开课系别=@开课系别,学分=@学分 where 课程编号=@课程编号", new SqlParameter("课程编号", 课程编号), new SqlParameter("课程名称", 课程名称), new SqlParameter("课程简称", 课程简称), new SqlParameter("拼音码", 拼音码), new SqlParameter("本学期课程", 本学期课程), new SqlParameter("教师", 教师), new SqlParameter("开课系别", 开课系别), new SqlParameter("学分", 学分));
+                    SQLHelper.ExecuteNonQuery("update 课程信息 set 课程编号=@课程编号,课程名称=@课程名称,课程简称=@课程简称,拼音码=@拼音码,本学期课程=@本学期课程,教师=@教师,开课系别=@开课系别,学分=@学分,课程容量=@课程容量,教职工号=@教职工号,剩余容量=@剩余容量 where 课程编号=@课程编号", new SqlParameter("课程编号", 课程编号), new SqlParameter("课程名称", 课程名称), new SqlParameter("课程简称", 课程简称), new SqlParameter("拼音码", 拼音码), new SqlParameter("本学期课程", 本学期课程), new SqlParameter("教师", 教师), new SqlParameter("开课系别", 开课系别), new SqlParameter("学分", 学分), new SqlParameter("课程容量", 课程容量), new SqlParameter("教职工号", 教职工号), new SqlParameter("剩余容量", 课程容量));
                     Judge = null;
                 }
                 dgvCourseInfo.DataSource = SQLHelper.ExecuteDataTable("select * from 课程信息");
@@ -288,9 +298,11 @@ namespace 教务系统
             txt6.ReadOnly = true;
             txt7.ReadOnly = true;
             cmb1.Enabled = false;
-            txt8.ReadOnly = true;
+            cmbTeaName.Enabled = false;
             txt9.ReadOnly = true;
             txt10.ReadOnly = true;
+            cmbTeaName.Enabled = false;
+            txt12.ReadOnly = true;
             return;
         }
 
@@ -331,5 +343,6 @@ namespace 教务系统
             ReadOnly();
             return;
         }
+        #endregion
     }
 }

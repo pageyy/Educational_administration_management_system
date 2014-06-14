@@ -52,3 +52,6 @@ D:\CODE\github\Educational_administration_management_system\教务系统\教务�
 D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Student.ShowStuInfo.resources
 D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Student.ModifyStuPassword.resources
 D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Teacher.ModifyTeaPassword.resources
+D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Teacher.TeaInfo.resources
+D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Teacher.ShowCourseSelectedInfo.resources
+D:\CODE\github\Educational_administration_management_system\教务系统\教务系统\obj\x86\Release\教务系统.Teacher.ShowCourseTable.resources

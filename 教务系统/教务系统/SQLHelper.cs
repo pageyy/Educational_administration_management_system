@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.Windows.Forms;
+using JWSys.Model;
 
 namespace 教务系统
 {
@@ -138,13 +139,19 @@ namespace 教务系统
                         cmd.Parameters.Add(parameter);
                     }
                     SqlDataReader reader = cmd.ExecuteReader();
+                    cmb.Items.Clear();
                     while (reader.Read())
                     {
-                        Item item = new Item();
-                        item.Id = reader[0].ToString();
-                        item.Name = reader[1].ToString();
-                        cmb.Items.Add(item.Name);//如何解决item的问题？？？？？？？？？？
+                        //Item item = new Item();
+                        //item.Id = reader[0].ToString();
+                        //item.Name = reader[1].ToString();
+
+                        CmbAttributes att = new CmbAttributes();
+                        att.id = reader[0].ToString();
+                        att.name = reader[1].ToString();
+                        cmb.Items.Add(att);
                     }
+                    cmb.DisplayMember = "name";//解决了之前不知道如何显示特定要求内容
                     return;
                 }
             }

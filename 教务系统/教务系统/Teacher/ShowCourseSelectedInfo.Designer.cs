@@ -31,14 +31,14 @@
             this.dgvCourseElected = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblName = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.cmbName = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblCapicty = new System.Windows.Forms.Label();
-            this.lblCapacityTxt = new System.Windows.Forms.Label();
-            this.lblLeft = new System.Windows.Forms.Label();
             this.lblLeftTxt = new System.Windows.Forms.Label();
+            this.lblLeft = new System.Windows.Forms.Label();
+            this.lblCapacityTxt = new System.Windows.Forms.Label();
+            this.lblCapicty = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseElected)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,14 +84,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "【课程配置】";
             // 
-            // lblName
+            // cmbName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(143, 39);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(65, 12);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "课程名称：";
+            this.cmbName.FormattingEnabled = true;
+            this.cmbName.Location = new System.Drawing.Point(208, 36);
+            this.cmbName.Name = "cmbName";
+            this.cmbName.Size = new System.Drawing.Size(175, 20);
+            this.cmbName.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -103,13 +102,14 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // cmbName
+            // lblName
             // 
-            this.cmbName.FormattingEnabled = true;
-            this.cmbName.Location = new System.Drawing.Point(208, 36);
-            this.cmbName.Name = "cmbName";
-            this.cmbName.Size = new System.Drawing.Size(175, 20);
-            this.cmbName.TabIndex = 1;
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(143, 39);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(65, 12);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "课程名称：";
             // 
             // groupBox3
             // 
@@ -124,23 +124,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "【课程配置】";
             // 
-            // lblCapicty
+            // lblLeftTxt
             // 
-            this.lblCapicty.AutoSize = true;
-            this.lblCapicty.Location = new System.Drawing.Point(33, 39);
-            this.lblCapicty.Name = "lblCapicty";
-            this.lblCapicty.Size = new System.Drawing.Size(65, 12);
-            this.lblCapicty.TabIndex = 0;
-            this.lblCapicty.Text = "课程容量：";
-            // 
-            // lblCapacityTxt
-            // 
-            this.lblCapacityTxt.AutoSize = true;
-            this.lblCapacityTxt.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCapacityTxt.Location = new System.Drawing.Point(112, 34);
-            this.lblCapacityTxt.Name = "lblCapacityTxt";
-            this.lblCapacityTxt.Size = new System.Drawing.Size(0, 19);
-            this.lblCapacityTxt.TabIndex = 0;
+            this.lblLeftTxt.AutoSize = true;
+            this.lblLeftTxt.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblLeftTxt.Location = new System.Drawing.Point(275, 36);
+            this.lblLeftTxt.Name = "lblLeftTxt";
+            this.lblLeftTxt.Size = new System.Drawing.Size(0, 19);
+            this.lblLeftTxt.TabIndex = 0;
             // 
             // lblLeft
             // 
@@ -151,14 +142,23 @@
             this.lblLeft.TabIndex = 0;
             this.lblLeft.Text = "剩余容量：";
             // 
-            // lblLeftTxt
+            // lblCapacityTxt
             // 
-            this.lblLeftTxt.AutoSize = true;
-            this.lblLeftTxt.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblLeftTxt.Location = new System.Drawing.Point(275, 36);
-            this.lblLeftTxt.Name = "lblLeftTxt";
-            this.lblLeftTxt.Size = new System.Drawing.Size(0, 19);
-            this.lblLeftTxt.TabIndex = 0;
+            this.lblCapacityTxt.AutoSize = true;
+            this.lblCapacityTxt.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCapacityTxt.Location = new System.Drawing.Point(112, 34);
+            this.lblCapacityTxt.Name = "lblCapacityTxt";
+            this.lblCapacityTxt.Size = new System.Drawing.Size(0, 19);
+            this.lblCapacityTxt.TabIndex = 0;
+            // 
+            // lblCapicty
+            // 
+            this.lblCapicty.AutoSize = true;
+            this.lblCapicty.Location = new System.Drawing.Point(33, 39);
+            this.lblCapicty.Name = "lblCapicty";
+            this.lblCapicty.Size = new System.Drawing.Size(65, 12);
+            this.lblCapicty.TabIndex = 0;
+            this.lblCapicty.Text = "课程容量：";
             // 
             // ShowCourseSelectedInfo
             // 
@@ -169,6 +169,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ShowCourseSelectedInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "【课程选修状态展示】";
             this.Load += new System.EventHandler(this.ShowCourseSelectedInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseElected)).EndInit();

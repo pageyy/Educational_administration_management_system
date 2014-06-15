@@ -130,7 +130,7 @@
             this.Controls.Add(this.gbStudentInfo);
             this.Name = "CurriculumSchedule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "【学生信息】";
+            this.Text = "【学生课表】";
             this.gbStudentInfo.ResumeLayout(false);
             this.gbStudentInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCourseElected)).EndInit();

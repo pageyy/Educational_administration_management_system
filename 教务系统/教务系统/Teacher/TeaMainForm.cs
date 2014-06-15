@@ -13,6 +13,7 @@ namespace 教务系统.Teacher
     {
         string userName;//教师职工号
 
+        #region 构造函数
         public TeaMainForm(string username)
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace 教务系统.Teacher
             sbEduTea.Panels[1].Text = username + "，欢迎您登录教务管理系统！当前为教师用户状态。";
             sbEduTea.Panels[2].Text = "当前系统时间为：" + DateTime.Now.ToString();
         }
+        #endregion
 
         #region 查询MDI子窗体是否存在
         private bool checkChildFrmExist(string childFrmName)
@@ -104,7 +106,14 @@ namespace 教务系统.Teacher
         #region 课表查询
         private void 课表查询ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //通过窗体名称查询该窗体是否已经存在，如存在则显示，否则就新创建一个
+            if (this.checkChildFrmExist("ShowCourseTable") == true)
+            {
+                return;
+            }
+            ShowCourseTable sct = new ShowCourseTable(userName);
+            sct.MdiParent = this;
+            sct.Show();
         }
         #endregion
     }

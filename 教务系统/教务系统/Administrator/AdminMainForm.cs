@@ -139,6 +139,19 @@ namespace 教务系统
         }
         #endregion
 
+        #region 授权录分管理
+        private void 授权录分管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.checkChildFrmExist("GrantToTeacherInputScore") == true)
+            {
+                return;
+            }
+            GrantToTeacherInputScore gTt = new GrantToTeacherInputScore();
+            gTt.MdiParent = this;
+            gTt.Show();
+        }
+        #endregion
+
 
 
 

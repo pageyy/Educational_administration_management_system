@@ -40,13 +40,15 @@
             this.MenuItem52 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.sbEduAdmin = new System.Windows.Forms.StatusBar();
+            this.statusBarPanel4 = new System.Windows.Forms.StatusBarPanel();
             this.statusBarPanel1 = new System.Windows.Forms.StatusBarPanel();
             this.statusBarPanel2 = new System.Windows.Forms.StatusBarPanel();
-            this.statusBarPanel4 = new System.Windows.Forms.StatusBarPanel();
+            this.授权录分管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mainMenu1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel4)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -76,14 +78,14 @@
             // MenuItem12
             // 
             this.MenuItem12.Name = "MenuItem12";
-            this.MenuItem12.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem12.Size = new System.Drawing.Size(152, 22);
             this.MenuItem12.Text = "专业信息维护";
             this.MenuItem12.Click += new System.EventHandler(this.MenuItem12_Click);
             // 
             // MenuItem13
             // 
             this.MenuItem13.Name = "MenuItem13";
-            this.MenuItem13.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem13.Size = new System.Drawing.Size(152, 22);
             this.MenuItem13.Text = "班级信息维护";
             this.MenuItem13.Click += new System.EventHandler(this.MenuItem13_Click);
             // 
@@ -112,22 +114,24 @@
             // 
             this.MenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItem51,
-            this.MenuItem52});
+            this.MenuItem52,
+            this.toolStripSeparator1,
+            this.授权录分管理ToolStripMenuItem});
             this.MenuItem5.Name = "MenuItem5";
-            this.MenuItem5.Size = new System.Drawing.Size(92, 21);
-            this.MenuItem5.Text = "登录授权管理";
+            this.MenuItem5.Size = new System.Drawing.Size(68, 21);
+            this.MenuItem5.Text = "授权管理";
             // 
             // MenuItem51
             // 
             this.MenuItem51.Name = "MenuItem51";
-            this.MenuItem51.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem51.Size = new System.Drawing.Size(152, 22);
             this.MenuItem51.Text = "教师授权管理";
             this.MenuItem51.Click += new System.EventHandler(this.MenuItem51_Click);
             // 
             // MenuItem52
             // 
             this.MenuItem52.Name = "MenuItem52";
-            this.MenuItem52.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem52.Size = new System.Drawing.Size(152, 22);
             this.MenuItem52.Text = "学生授权管理";
             this.MenuItem52.Click += new System.EventHandler(this.MenuItem52_Click);
             // 
@@ -150,6 +154,10 @@
             this.sbEduAdmin.Size = new System.Drawing.Size(955, 22);
             this.sbEduAdmin.TabIndex = 5;
             // 
+            // statusBarPanel4
+            // 
+            this.statusBarPanel4.Name = "statusBarPanel4";
+            // 
             // statusBarPanel1
             // 
             this.statusBarPanel1.MinWidth = 200;
@@ -162,9 +170,17 @@
             this.statusBarPanel2.Name = "statusBarPanel2";
             this.statusBarPanel2.Width = 300;
             // 
-            // statusBarPanel4
+            // 授权录分管理ToolStripMenuItem
             // 
-            this.statusBarPanel4.Name = "statusBarPanel4";
+            this.授权录分管理ToolStripMenuItem.Name = "授权录分管理ToolStripMenuItem";
+            this.授权录分管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.授权录分管理ToolStripMenuItem.Text = "授权录分管理";
+            this.授权录分管理ToolStripMenuItem.Click += new System.EventHandler(this.授权录分管理ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // MainForm
             // 
@@ -182,9 +198,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.mainMenu1.ResumeLayout(false);
             this.mainMenu1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +223,8 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItem6;
         private System.Windows.Forms.ToolStripMenuItem MenuItem52;
         private System.Windows.Forms.StatusBarPanel statusBarPanel4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem 授权录分管理ToolStripMenuItem;
     }
 }
 

@@ -49,11 +49,24 @@
             this.lblSearchNo = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvTeacherInfo = new System.Windows.Forms.DataGridView();
-            this.gpbTeacherInfo = new System.Windows.Forms.GroupBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.teachersInfoDateSet = new 教务系统.TeachersInfoDateSet();
             this.教师信息BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.教师信息TableAdapter = new 教务系统.TeachersInfoDateSetTableAdapters.教师信息TableAdapter();
+            this.gpbTeacherInfo = new System.Windows.Forms.GroupBox();
+            this.txtShenfenzheng = new System.Windows.Forms.TextBox();
+            this.lblShenfenzheng = new System.Windows.Forms.Label();
+            this.cmbJiguan = new System.Windows.Forms.ComboBox();
+            this.lblJiguan = new System.Windows.Forms.Label();
+            this.cmbMinzu = new System.Windows.Forms.ComboBox();
+            this.lblMinzu = new System.Windows.Forms.Label();
+            this.cmbZhengzhimianmao = new System.Windows.Forms.ComboBox();
+            this.lblZhengZhiMianMao = new System.Windows.Forms.Label();
+            this.cmbZhiChen = new System.Windows.Forms.ComboBox();
+            this.lblZhiChen = new System.Windows.Forms.Label();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtNo = new System.Windows.Forms.TextBox();
+            this.lblZhiGongHao = new System.Windows.Forms.Label();
             this.职工号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.性别DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,28 +75,15 @@
             this.民族编号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.籍贯编号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.身份证号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblZhiGongHao = new System.Windows.Forms.Label();
-            this.txtNo = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lblName = new System.Windows.Forms.Label();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.lblZhiChen = new System.Windows.Forms.Label();
-            this.cmbZhiChen = new System.Windows.Forms.ComboBox();
-            this.cmbZhengzhimianmao = new System.Windows.Forms.ComboBox();
-            this.lblZhengZhiMianMao = new System.Windows.Forms.Label();
-            this.cmbMinzu = new System.Windows.Forms.ComboBox();
-            this.lblMinzu = new System.Windows.Forms.Label();
-            this.cmbJiguan = new System.Windows.Forms.ComboBox();
-            this.lblJiguan = new System.Windows.Forms.Label();
-            this.txtShenfenzheng = new System.Windows.Forms.TextBox();
-            this.lblShenfenzheng = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.teachersInfoDateSet = new 教务系统.TeachersInfoDateSet();
+            this.教师信息TableAdapter = new 教务系统.TeachersInfoDateSetTableAdapters.教师信息TableAdapter();
             this.gbStudentsInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeacherInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.教师信息BindingSource)).BeginInit();
             this.gpbTeacherInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teachersInfoDateSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.教师信息BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tbTeacherInfo
@@ -283,6 +283,11 @@
             this.dgvTeacherInfo.TabIndex = 3;
             this.dgvTeacherInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTeacherInfo_CellClick);
             // 
+            // 教师信息BindingSource
+            // 
+            this.教师信息BindingSource.DataMember = "教师信息";
+            this.教师信息BindingSource.DataSource = this.bindingSource1;
+            // 
             // gpbTeacherInfo
             // 
             this.gpbTeacherInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
@@ -309,24 +314,147 @@
             this.gpbTeacherInfo.TabIndex = 4;
             this.gpbTeacherInfo.TabStop = false;
             // 
-            // bindingSource1
+            // txtShenfenzheng
             // 
-            this.bindingSource1.DataSource = this.teachersInfoDateSet;
-            this.bindingSource1.Position = 0;
+            this.txtShenfenzheng.Location = new System.Drawing.Point(511, 88);
+            this.txtShenfenzheng.Name = "txtShenfenzheng";
+            this.txtShenfenzheng.ReadOnly = true;
+            this.txtShenfenzheng.Size = new System.Drawing.Size(120, 21);
+            this.txtShenfenzheng.TabIndex = 40;
             // 
-            // teachersInfoDateSet
+            // lblShenfenzheng
             // 
-            this.teachersInfoDateSet.DataSetName = "TeachersInfoDateSet";
-            this.teachersInfoDateSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.lblShenfenzheng.AutoSize = true;
+            this.lblShenfenzheng.Location = new System.Drawing.Point(511, 73);
+            this.lblShenfenzheng.Name = "lblShenfenzheng";
+            this.lblShenfenzheng.Size = new System.Drawing.Size(41, 12);
+            this.lblShenfenzheng.TabIndex = 39;
+            this.lblShenfenzheng.Text = "身份证";
             // 
-            // 教师信息BindingSource
+            // cmbJiguan
             // 
-            this.教师信息BindingSource.DataMember = "教师信息";
-            this.教师信息BindingSource.DataSource = this.bindingSource1;
+            this.cmbJiguan.Enabled = false;
+            this.cmbJiguan.FormattingEnabled = true;
+            this.cmbJiguan.Location = new System.Drawing.Point(344, 89);
+            this.cmbJiguan.Name = "cmbJiguan";
+            this.cmbJiguan.Size = new System.Drawing.Size(137, 20);
+            this.cmbJiguan.TabIndex = 38;
             // 
-            // 教师信息TableAdapter
+            // lblJiguan
             // 
-            this.教师信息TableAdapter.ClearBeforeFill = true;
+            this.lblJiguan.AutoSize = true;
+            this.lblJiguan.Location = new System.Drawing.Point(344, 73);
+            this.lblJiguan.Name = "lblJiguan";
+            this.lblJiguan.Size = new System.Drawing.Size(29, 12);
+            this.lblJiguan.TabIndex = 37;
+            this.lblJiguan.Text = "籍贯";
+            // 
+            // cmbMinzu
+            // 
+            this.cmbMinzu.Enabled = false;
+            this.cmbMinzu.FormattingEnabled = true;
+            this.cmbMinzu.Location = new System.Drawing.Point(191, 89);
+            this.cmbMinzu.Name = "cmbMinzu";
+            this.cmbMinzu.Size = new System.Drawing.Size(121, 20);
+            this.cmbMinzu.TabIndex = 36;
+            // 
+            // lblMinzu
+            // 
+            this.lblMinzu.AutoSize = true;
+            this.lblMinzu.Location = new System.Drawing.Point(191, 73);
+            this.lblMinzu.Name = "lblMinzu";
+            this.lblMinzu.Size = new System.Drawing.Size(29, 12);
+            this.lblMinzu.TabIndex = 35;
+            this.lblMinzu.Text = "民族";
+            // 
+            // cmbZhengzhimianmao
+            // 
+            this.cmbZhengzhimianmao.Enabled = false;
+            this.cmbZhengzhimianmao.FormattingEnabled = true;
+            this.cmbZhengzhimianmao.Location = new System.Drawing.Point(43, 89);
+            this.cmbZhengzhimianmao.Name = "cmbZhengzhimianmao";
+            this.cmbZhengzhimianmao.Size = new System.Drawing.Size(121, 20);
+            this.cmbZhengzhimianmao.TabIndex = 34;
+            // 
+            // lblZhengZhiMianMao
+            // 
+            this.lblZhengZhiMianMao.AutoSize = true;
+            this.lblZhengZhiMianMao.Location = new System.Drawing.Point(43, 73);
+            this.lblZhengZhiMianMao.Name = "lblZhengZhiMianMao";
+            this.lblZhengZhiMianMao.Size = new System.Drawing.Size(53, 12);
+            this.lblZhengZhiMianMao.TabIndex = 33;
+            this.lblZhengZhiMianMao.Text = "政治面貌";
+            // 
+            // cmbZhiChen
+            // 
+            this.cmbZhiChen.Enabled = false;
+            this.cmbZhiChen.FormattingEnabled = true;
+            this.cmbZhiChen.Location = new System.Drawing.Point(510, 36);
+            this.cmbZhiChen.Name = "cmbZhiChen";
+            this.cmbZhiChen.Size = new System.Drawing.Size(121, 20);
+            this.cmbZhiChen.TabIndex = 32;
+            // 
+            // lblZhiChen
+            // 
+            this.lblZhiChen.AutoSize = true;
+            this.lblZhiChen.Location = new System.Drawing.Point(509, 20);
+            this.lblZhiChen.Name = "lblZhiChen";
+            this.lblZhiChen.Size = new System.Drawing.Size(29, 12);
+            this.lblZhiChen.TabIndex = 31;
+            this.lblZhiChen.Text = "职称";
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.Enabled = false;
+            this.cmbGender.Items.AddRange(new object[] {
+            "男",
+            "女"});
+            this.cmbGender.Location = new System.Drawing.Point(346, 36);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(135, 20);
+            this.cmbGender.TabIndex = 30;
+            // 
+            // lblGender
+            // 
+            this.lblGender.Location = new System.Drawing.Point(346, 20);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(56, 15);
+            this.lblGender.TabIndex = 29;
+            this.lblGender.Text = "性别";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(193, 36);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(115, 21);
+            this.txtName.TabIndex = 3;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(193, 21);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(29, 12);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "姓名";
+            // 
+            // txtNo
+            // 
+            this.txtNo.Location = new System.Drawing.Point(43, 36);
+            this.txtNo.Name = "txtNo";
+            this.txtNo.ReadOnly = true;
+            this.txtNo.Size = new System.Drawing.Size(115, 21);
+            this.txtNo.TabIndex = 1;
+            // 
+            // lblZhiGongHao
+            // 
+            this.lblZhiGongHao.AutoSize = true;
+            this.lblZhiGongHao.Location = new System.Drawing.Point(43, 21);
+            this.lblZhiGongHao.Name = "lblZhiGongHao";
+            this.lblZhiGongHao.Size = new System.Drawing.Size(41, 12);
+            this.lblZhiGongHao.TabIndex = 0;
+            this.lblZhiGongHao.Text = "职工号";
             // 
             // 职工号DataGridViewTextBoxColumn
             // 
@@ -376,147 +504,19 @@
             this.身份证号DataGridViewTextBoxColumn.HeaderText = "身份证号";
             this.身份证号DataGridViewTextBoxColumn.Name = "身份证号DataGridViewTextBoxColumn";
             // 
-            // lblZhiGongHao
+            // bindingSource1
             // 
-            this.lblZhiGongHao.AutoSize = true;
-            this.lblZhiGongHao.Location = new System.Drawing.Point(43, 21);
-            this.lblZhiGongHao.Name = "lblZhiGongHao";
-            this.lblZhiGongHao.Size = new System.Drawing.Size(41, 12);
-            this.lblZhiGongHao.TabIndex = 0;
-            this.lblZhiGongHao.Text = "职工号";
+            this.bindingSource1.DataSource = this.teachersInfoDateSet;
+            this.bindingSource1.Position = 0;
             // 
-            // txtNo
+            // teachersInfoDateSet
             // 
-            this.txtNo.Location = new System.Drawing.Point(43, 36);
-            this.txtNo.Name = "txtNo";
-            this.txtNo.ReadOnly = true;
-            this.txtNo.Size = new System.Drawing.Size(115, 21);
-            this.txtNo.TabIndex = 1;
+            this.teachersInfoDateSet.DataSetName = "TeachersInfoDateSet";
+            this.teachersInfoDateSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtName
+            // 教师信息TableAdapter
             // 
-            this.txtName.Location = new System.Drawing.Point(193, 36);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(115, 21);
-            this.txtName.TabIndex = 3;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(193, 21);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(29, 12);
-            this.lblName.TabIndex = 2;
-            this.lblName.Text = "姓名";
-            // 
-            // cmbGender
-            // 
-            this.cmbGender.Enabled = false;
-            this.cmbGender.Items.AddRange(new object[] {
-            "男",
-            "女"});
-            this.cmbGender.Location = new System.Drawing.Point(346, 36);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(135, 20);
-            this.cmbGender.TabIndex = 30;
-            // 
-            // lblGender
-            // 
-            this.lblGender.Location = new System.Drawing.Point(346, 20);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(56, 15);
-            this.lblGender.TabIndex = 29;
-            this.lblGender.Text = "性别";
-            // 
-            // lblZhiChen
-            // 
-            this.lblZhiChen.AutoSize = true;
-            this.lblZhiChen.Location = new System.Drawing.Point(509, 20);
-            this.lblZhiChen.Name = "lblZhiChen";
-            this.lblZhiChen.Size = new System.Drawing.Size(29, 12);
-            this.lblZhiChen.TabIndex = 31;
-            this.lblZhiChen.Text = "职称";
-            // 
-            // cmbZhiChen
-            // 
-            this.cmbZhiChen.Enabled = false;
-            this.cmbZhiChen.FormattingEnabled = true;
-            this.cmbZhiChen.Location = new System.Drawing.Point(510, 36);
-            this.cmbZhiChen.Name = "cmbZhiChen";
-            this.cmbZhiChen.Size = new System.Drawing.Size(121, 20);
-            this.cmbZhiChen.TabIndex = 32;
-            // 
-            // cmbZhengzhimianmao
-            // 
-            this.cmbZhengzhimianmao.Enabled = false;
-            this.cmbZhengzhimianmao.FormattingEnabled = true;
-            this.cmbZhengzhimianmao.Location = new System.Drawing.Point(43, 89);
-            this.cmbZhengzhimianmao.Name = "cmbZhengzhimianmao";
-            this.cmbZhengzhimianmao.Size = new System.Drawing.Size(121, 20);
-            this.cmbZhengzhimianmao.TabIndex = 34;
-            // 
-            // lblZhengZhiMianMao
-            // 
-            this.lblZhengZhiMianMao.AutoSize = true;
-            this.lblZhengZhiMianMao.Location = new System.Drawing.Point(43, 73);
-            this.lblZhengZhiMianMao.Name = "lblZhengZhiMianMao";
-            this.lblZhengZhiMianMao.Size = new System.Drawing.Size(53, 12);
-            this.lblZhengZhiMianMao.TabIndex = 33;
-            this.lblZhengZhiMianMao.Text = "政治面貌";
-            // 
-            // cmbMinzu
-            // 
-            this.cmbMinzu.Enabled = false;
-            this.cmbMinzu.FormattingEnabled = true;
-            this.cmbMinzu.Location = new System.Drawing.Point(191, 89);
-            this.cmbMinzu.Name = "cmbMinzu";
-            this.cmbMinzu.Size = new System.Drawing.Size(121, 20);
-            this.cmbMinzu.TabIndex = 36;
-            // 
-            // lblMinzu
-            // 
-            this.lblMinzu.AutoSize = true;
-            this.lblMinzu.Location = new System.Drawing.Point(191, 73);
-            this.lblMinzu.Name = "lblMinzu";
-            this.lblMinzu.Size = new System.Drawing.Size(29, 12);
-            this.lblMinzu.TabIndex = 35;
-            this.lblMinzu.Text = "民族";
-            // 
-            // cmbJiguan
-            // 
-            this.cmbJiguan.Enabled = false;
-            this.cmbJiguan.FormattingEnabled = true;
-            this.cmbJiguan.Location = new System.Drawing.Point(344, 89);
-            this.cmbJiguan.Name = "cmbJiguan";
-            this.cmbJiguan.Size = new System.Drawing.Size(137, 20);
-            this.cmbJiguan.TabIndex = 38;
-            // 
-            // lblJiguan
-            // 
-            this.lblJiguan.AutoSize = true;
-            this.lblJiguan.Location = new System.Drawing.Point(344, 73);
-            this.lblJiguan.Name = "lblJiguan";
-            this.lblJiguan.Size = new System.Drawing.Size(29, 12);
-            this.lblJiguan.TabIndex = 37;
-            this.lblJiguan.Text = "籍贯";
-            // 
-            // txtShenfenzheng
-            // 
-            this.txtShenfenzheng.Location = new System.Drawing.Point(511, 88);
-            this.txtShenfenzheng.Name = "txtShenfenzheng";
-            this.txtShenfenzheng.ReadOnly = true;
-            this.txtShenfenzheng.Size = new System.Drawing.Size(120, 21);
-            this.txtShenfenzheng.TabIndex = 40;
-            // 
-            // lblShenfenzheng
-            // 
-            this.lblShenfenzheng.AutoSize = true;
-            this.lblShenfenzheng.Location = new System.Drawing.Point(511, 73);
-            this.lblShenfenzheng.Name = "lblShenfenzheng";
-            this.lblShenfenzheng.Size = new System.Drawing.Size(41, 12);
-            this.lblShenfenzheng.TabIndex = 39;
-            this.lblShenfenzheng.Text = "身份证";
+            this.教师信息TableAdapter.ClearBeforeFill = true;
             // 
             // TeacherInfo
             // 
@@ -534,11 +534,11 @@
             this.gbStudentsInfo.ResumeLayout(false);
             this.gbStudentsInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeacherInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.教师信息BindingSource)).EndInit();
             this.gpbTeacherInfo.ResumeLayout(false);
             this.gpbTeacherInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teachersInfoDateSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.教师信息BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

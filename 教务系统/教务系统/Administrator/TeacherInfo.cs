@@ -211,49 +211,57 @@ namespace 教务系统.Administrator
                 string 职工号 = txtNo.Text.Trim();
                 string 姓名 = txtName.Text.Trim();
                 string 性别 = cmbGender.Text.Trim();
-
-                string 职称;
-                if (cmbZhiChen.SelectedItem != null)
-                {
-                    职称 = cmbZhiChen.SelectedItem.ToString();
-                }
-                else
-                {
-                    职称 = cmbZhiChen.Text.Trim();
-                }
-                string 职称编号 = SQLHelper.ExecuteScalar("select 职称编号 from 职称代码表 where 职称名称=@职称", new SqlParameter("职称", 职称)).ToString();
-
+                
+                
+                
                 string 政治面貌;
-                if (cmbZhengzhimianmao.SelectedItem != null)
-                {
-                    政治面貌 = cmbZhengzhimianmao.SelectedItem.ToString();
-                }
-                else
-                {
-                    政治面貌 = cmbZhengzhimianmao.Text.Trim();
-                }
+                //if (cmbZhengzhimianmao.SelectedItem != null)
+                //{
+                //    政治面貌 = cmbZhengzhimianmao.SelectedText.Trim();
+                    
+                //}
+                //else
+                //{
+                //    政治面貌 = cmbZhengzhimianmao.Text.Trim();
+                //}
+                政治面貌 = cmbZhengzhimianmao.Text.Trim();
                 string 政治面貌编号 = SQLHelper.ExecuteScalar("select 政治面貌编号 from 政治面貌代码表 where 政治面貌=@政治面貌", new SqlParameter("政治面貌", 政治面貌)).ToString();
 
+                string 职称;
+                //if (cmbZhiChen.SelectedItem != null)
+                //{
+                //    //职称 = cmbZhiChen.SelectedItem.ToString();
+                //    职称 = cmbZhiChen.SelectedText.Trim();
+                //}
+                //else
+                //{
+                //    职称 = cmbZhiChen.Text.Trim();
+                //}
+                职称 = cmbZhiChen.Text.Trim();
+                string 职称编号 = SQLHelper.ExecuteScalar("select 职称编号 from 职称代码表 where 职称名称=@职称", new SqlParameter("职称", 职称)).ToString();
+
                 string 民族;
-                if (cmbMinzu.SelectedItem != null)
-                {
-                    民族 = cmbMinzu.SelectedItem.ToString();
-                }
-                else
-                {
-                    民族 = cmbMinzu.Text.Trim();
-                }
+                //if (cmbMinzu.SelectedItem != null)
+                //{
+                //    民族 = cmbMinzu.SelectedText.Trim();
+                //}
+                //else
+                //{
+                //    民族 = cmbMinzu.Text.Trim();
+                //}
+                民族 = cmbMinzu.Text.Trim();
                 string 民族编号 = SQLHelper.ExecuteScalar("select 民族编号 from 民族代码表 where 民族=@民族", new SqlParameter("民族", 民族)).ToString();
 
                 string 籍贯;
-                if (cmbJiguan.SelectedItem != null)
-                {
-                    籍贯 = cmbJiguan.SelectedItem.ToString();
-                }
-                else
-                {
-                    籍贯 = cmbJiguan.Text.Trim();
-                }
+                //if (cmbJiguan.SelectedItem != null)
+                //{
+                //    籍贯 = cmbJiguan.SelectedText.Trim();
+                //}
+                //else
+                //{
+                //    籍贯 = cmbJiguan.Text.Trim();
+                //}
+                籍贯 = cmbJiguan.Text.Trim();
                 string 籍贯编号 = SQLHelper.ExecuteScalar("select 籍贯编号 from 籍贯代码表 where 籍贯=@籍贯", new SqlParameter("籍贯", 籍贯)).ToString();
 
                 string 身份证号 = txtShenfenzheng.Text.Trim();

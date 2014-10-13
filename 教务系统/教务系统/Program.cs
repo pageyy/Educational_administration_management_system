@@ -26,7 +26,7 @@ namespace 教务系统
             //教务系统.Student.StuMainForm("08113398")
             //教务系统.Student.StuMainForm("08113401")
             //Login()  
-            //教务系统.Teacher.TeaMainForm("T080002")  
+            //教务系统.Teacher.TeaMainForm("20140001")  
             //MainForm("admin")
         }
     }

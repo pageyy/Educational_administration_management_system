@@ -285,57 +285,62 @@ namespace 教务系统
                 string 学号 = txt4.Text.Trim();
                 string 姓名 = txt5.Text.Trim();
                 string 班级名称;
-                if (cmb2.SelectedItem != null)
-                {
-                    班级名称 = cmb2.SelectedItem.ToString();
-                }
-                else
-                {
-                    班级名称 = cmb2.Text.Trim();
-                }
+                //if (cmb2.SelectedItem != null)
+                //{
+                //    班级名称 = cmb2.SelectedItem.ToString();
+                //}
+                //else
+                //{
+                //    班级名称 = cmb2.Text.Trim();
+                //}
+                班级名称 = cmb2.Text.Trim();
                 string 班级编号 = SQLHelper.ExecuteScalar("select 班级编号 from 班级信息 where 班级名称=@班级名称", new SqlParameter("班级名称", 班级名称)).ToString();
                 string 性别 = cmb1.Text.Trim();
                 string 年级 = txt6.Text.Trim();
                 string 政治面貌;
-                if (cmb3.SelectedItem != null)
-                {
-                    政治面貌 = cmb3.SelectedItem.ToString();
-                }
-                else
-                {
-                    政治面貌 = cmb3.Text.Trim();
-                }
+                //if (cmb3.SelectedItem != null)
+                //{
+                //    政治面貌 = cmb3.SelectedItem.ToString();
+                //}
+                //else
+                //{
+                //    政治面貌 = cmb3.Text.Trim();
+                //}
+                政治面貌 = cmb3.Text.Trim();
                 string 政治面貌编号 = SQLHelper.ExecuteScalar("select 政治面貌编号 from 政治面貌代码表 where 政治面貌=@政治面貌", new SqlParameter("政治面貌", 政治面貌)).ToString();
                 string 民族;
-                if (cmb4.SelectedItem != null)
-                {
-                    民族 = cmb4.SelectedItem.ToString();
-                }
-                else
-                {
-                    民族 = cmb4.Text.Trim();
-                }
+                //if (cmb4.SelectedItem != null)
+                //{
+                //    民族 = cmb4.SelectedItem.ToString();
+                //}
+                //else
+                //{
+                //    民族 = cmb4.Text.Trim();
+                //}
+                民族 = cmb4.Text.Trim();
                 string 民族编号 = SQLHelper.ExecuteScalar("select 民族编号 from 民族代码表 where 民族=@民族", new SqlParameter("民族", 民族)).ToString();
                 string 籍贯;
-                if (cmb5.SelectedItem != null)
-                {
-                    籍贯 = cmb5.SelectedItem.ToString();
-                }
-                else
-                {
-                    籍贯 = cmb5.Text.Trim();
-                }
+                //if (cmb5.SelectedItem != null)
+                //{
+                //    籍贯 = cmb5.SelectedItem.ToString();
+                //}
+                //else
+                //{
+                //    籍贯 = cmb5.Text.Trim();
+                //}
+                籍贯 = cmb5.Text.Trim();
                 string 籍贯编号 = SQLHelper.ExecuteScalar("select 籍贯编号 from 籍贯代码表 where 籍贯=@籍贯", new SqlParameter("籍贯", 籍贯)).ToString();
                 string 身份证号 = txt7.Text.Trim();
                 string 学籍名称;
-                if (cmb6.SelectedItem != null)
-                {
-                    学籍名称 = cmb6.SelectedItem.ToString();
-                }
-                else
-                {
-                    学籍名称 = cmb6.Text.Trim();
-                }
+                //if (cmb6.SelectedItem != null)
+                //{
+                //    学籍名称 = cmb6.SelectedItem.ToString();
+                //}
+                //else
+                //{
+                //    学籍名称 = cmb6.Text.Trim();
+                //}
+                学籍名称 = cmb6.Text.Trim();
                 string 学籍编号 = SQLHelper.ExecuteScalar("select 学籍编号 from 学籍代码表 where 学籍名称=@学籍名称", new SqlParameter("学籍名称", 学籍名称)).ToString();
                 if (Judge == "新增")
                 {

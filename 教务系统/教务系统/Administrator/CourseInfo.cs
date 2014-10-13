@@ -273,12 +273,12 @@ namespace 教务系统
                 
                 if (Judge == "新增")
                 {
-                    SQLHelper.ExecuteNonQuery("Insert into 课程信息 values(@课程编号,@课程名称,@课程简称,@拼音码,@本学期课程,@教师,@开课系别,@学分,@课程容量,@教职工号,@剩余容量)", new SqlParameter("课程编号", 课程编号), new SqlParameter("课程名称", 课程名称), new SqlParameter("课程简称", 课程简称), new SqlParameter("拼音码", 拼音码), new SqlParameter("本学期课程", 本学期课程), new SqlParameter("教师", 教师), new SqlParameter("开课系别", 开课系别), new SqlParameter("学分", 学分), new SqlParameter("课程容量", 课程容量), new SqlParameter("教职工号", 教职工号),new SqlParameter("剩余容量",课程容量));
+                    SQLHelper.ExecuteNonQuery("Insert into 课程信息 values(@课程编号,@课程名称,@课程简称,@拼音码,@本学期课程,@教师,@开课系别,@学分,@课程容量,@教职工号,@剩余容量,@允许登录成绩)", new SqlParameter("课程编号", 课程编号), new SqlParameter("课程名称", 课程名称), new SqlParameter("课程简称", 课程简称), new SqlParameter("拼音码", 拼音码), new SqlParameter("本学期课程", 本学期课程), new SqlParameter("教师", 教师), new SqlParameter("开课系别", 开课系别), new SqlParameter("学分", 学分), new SqlParameter("课程容量", 课程容量), new SqlParameter("教职工号", 教职工号), new SqlParameter("剩余容量", 课程容量), new SqlParameter("允许登录成绩", "0"));
                     Judge = null;
                 }
                 else if (Judge == "修改")
                 {
-                    SQLHelper.ExecuteNonQuery("update 课程信息 set 课程编号=@课程编号,课程名称=@课程名称,课程简称=@课程简称,拼音码=@拼音码,本学期课程=@本学期课程,教师=@教师,开课系别=@开课系别,学分=@学分,课程容量=@课程容量,教职工号=@教职工号,剩余容量=@剩余容量 where 课程编号=@课程编号", new SqlParameter("课程编号", 课程编号), new SqlParameter("课程名称", 课程名称), new SqlParameter("课程简称", 课程简称), new SqlParameter("拼音码", 拼音码), new SqlParameter("本学期课程", 本学期课程), new SqlParameter("教师", 教师), new SqlParameter("开课系别", 开课系别), new SqlParameter("学分", 学分), new SqlParameter("课程容量", 课程容量), new SqlParameter("教职工号", 教职工号), new SqlParameter("剩余容量", 课程容量));
+                    SQLHelper.ExecuteNonQuery("update 课程信息 set 课程编号=@课程编号,课程名称=@课程名称,课程简称=@课程简称,拼音码=@拼音码,本学期课程=@本学期课程,教师=@教师,开课系别=@开课系别,学分=@学分,课程容量=@课程容量,教职工号=@教职工号,剩余容量=@剩余容量,@允许登录成绩 where 课程编号=@课程编号", new SqlParameter("课程编号", 课程编号), new SqlParameter("课程名称", 课程名称), new SqlParameter("课程简称", 课程简称), new SqlParameter("拼音码", 拼音码), new SqlParameter("本学期课程", 本学期课程), new SqlParameter("教师", 教师), new SqlParameter("开课系别", 开课系别), new SqlParameter("学分", 学分), new SqlParameter("课程容量", 课程容量), new SqlParameter("教职工号", 教职工号), new SqlParameter("剩余容量", 课程容量), new SqlParameter("允许登录成绩", "0"));
                     Judge = null;
                 }
                 dgvCourseInfo.DataSource = SQLHelper.ExecuteDataTable("select * from 课程信息");
